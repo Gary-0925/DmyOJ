@@ -12,10 +12,10 @@
 		</script>
 
 		<!-- Bootstrap core CSS -->
-		<link type="text/css" rel="stylesheet" href="D:/OJ/oj.daimayuan.top/css/bootstrap.min.css" />		<!-- Bootstrap Glyphicons CSS-->
-		<link type="text/css" rel="stylesheet" href="D:/OJ/oj.daimayuan.top/css/bootstrap-glyphicons.min.css" />
+		<link type="text/css" rel="stylesheet" href="/OJ/oj.daimayuan.top/css/bootstrap.min.css" />		<!-- Bootstrap Glyphicons CSS-->
+		<link type="text/css" rel="stylesheet" href="/OJ/oj.daimayuan.top/css/bootstrap-glyphicons.min.css" />
 		<!-- Custom styles for this template -->
-		<link type="text/css" rel="stylesheet" href="D:/OJ/oj.daimayuan.top/css/uoj-theme.css" />		
+		<link type="text/css" rel="stylesheet" href="/OJ/oj.daimayuan.top/css/uoj-theme.css" />		
 		<!-- jQuery (necessary for Bootstrap\'s JavaScript plugins) -->
 		<script src="http://oj.daimayuan.top/js/jquery.min.js"></script>		
 		<!-- jQuery autosize -->
@@ -35,7 +35,7 @@
 		<!-- Color converter -->
 		<script src="http://oj.daimayuan.top/js/color-converter.min.js"></script>		
 		<!-- uoj -->
-		<script src="file:///D:/OJ/oj.daimayuan.top/js/uoj.js"></script>		
+		<script src="/OJ/oj.daimayuan.top/js/uoj.js"></script>		
 		<!-- readmore -->
 		<script src="http://oj.daimayuan.top/js/readmore/readmore.min.js"></script>		
 		<!-- LAB -->
@@ -84,17 +84,17 @@
 						
 						<ul class="dropdown-menu" role="menu">
 							<li role="presentation"><a class="dropdown-item" id="my_chat">个人信息</a></li>
-							<li role="presentation"><a class="dropdown-item" href="file:///D:/OJ/oj.daimayuan.top/user/system-msg.html">系统消息&nbsp;&nbsp;</a></li>
+							<li role="presentation"><a class="dropdown-item" href="/OJ/oj.daimayuan.top/user/system-msg.html">系统消息&nbsp;&nbsp;</a></li>
 													</ul>
 					</li>
-					<li id="login" class="nav-item" role="presentation"><a class="nav-link" href="file:///D:/OJ/oj.daimayuan.top/login.html">登录</a></li>
-					<li id="register" class="nav-item" role="presentation"><a class="nav-link" href="file:///D:/OJ/oj.daimayuan.top/register.html">注册</a></li>
-					<li id="logout" class="nav-item" role="presentation"><a class="nav-link" href="file:///D:/OJ/oj.daimayuan.top/logout.html">登出</a></li>
+					<li id="login" class="nav-item" role="presentation"><a class="nav-link" href="/OJ/oj.daimayuan.top/login.html">登录</a></li>
+					<li id="register" class="nav-item" role="presentation"><a class="nav-link" href="/OJ/oj.daimayuan.top/register.html">注册</a></li>
+					<li id="logout" class="nav-item" role="presentation"><a class="nav-link" href="/OJ/oj.daimayuan.top/logout.html">登出</a></li>
 								</ul><script type="text/javascript">
 							var uoj_username = localStorage.getItem("uoj-username");
 							if (uoj_username != null) {
 								document.querySelector("#uoj_username_page").innerHTML = uoj_username;
-								document.querySelector("#my_chat").href = "file:///D:/OJ/oj.daimayuan.top/user/profile/" + uoj_username + ".html";
+								document.querySelector("#my_chat").href = "/OJ/oj.daimayuan.top/user/profile/" + uoj_username + ".html";
 								document.querySelector("#login").hidden = true;
 								document.querySelector("#register").hidden = true;
 							}
@@ -103,12 +103,12 @@
 								document.querySelector("#logout").hidden = true;
 							}
 						</script>
-				<h1 class="d-none d-sm-block"><a href="file:///D:/OJ/oj.daimayuan.top.html"><img src="http://oj.daimayuan.top/images/logo_small.png" alt="Logo" class="img-rounded" style="width:39px; height:39px;" /></a> Daimayuan Online Judge</h1>
+				<h1 class="d-none d-sm-block"><a href="/OJ/oj.daimayuan.top.html"><img src="http://oj.daimayuan.top/images/logo_small.png" alt="Logo" class="img-rounded" style="width:39px; height:39px;" /></a> Daimayuan Online Judge</h1>
 				<h1 class="d-block d-sm-none">Home</h1>
 			</div>
 			
 			<div class="navbar navbar-light navbar-expand-md bg-light mb-4" role="navigation">
-	<a class="navbar-brand" href="file:///D:/OJ/oj.daimayuan.top.html">Home</a>
+	<a class="navbar-brand" href="/OJ/oj.daimayuan.top.html">Home</a>
 	<button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target=".navbar-collapse">
 		<span class="navbar-toggler-icon"></span>
 	</button>
@@ -128,7 +128,7 @@
 				</div>
 			</div>
 		</form>
-		<script src="file:///D:/OJ/oj.daimayuan.top/js/uoj.js"></script>
+		<script src="/OJ/oj.daimayuan.top/js/uoj.js"></script>
 	</div><!--/.nav-collapse -->
 </div>
 <script type="text/javascript">
@@ -226,7 +226,7 @@
 for (var i = Number(localStorage.getItem("last_hack_id")); i; i--) {
 	if (localStorage.getItem("uoj_hack_id=" + i + "?type") == null || localStorage.getItem("uoj_hack_id=" + i + "?contest") != this_id) 
 		continue;
-	document.write('<tr><td><a href="file:///D:/OJ/oj.daimayuan.top/hack/' + i + '.html">#' + i + '</a></td><td><a href="file:///D:/OJ/oj.daimayuan.top/submission/' + localStorage.getItem("uoj_hack_id=" + i + "?subid") + '.html">#' + localStorage.getItem("uoj_hack_id=" + i + "?subid") + '</a></td><td><a href="problem/' + localStorage.getItem("submission-id=" + localStorage.getItem("uoj_hack_id=" + i + "?subid") + "?proid") + '.html">#' + localStorage.getItem("submission-id=" + localStorage.getItem("uoj_hack_id=" + i + "?subid") + "?proid") + '. ' + (localStorage.getItem("problem-id=" + localStorage.getItem("submission-id=" + localStorage.getItem("uoj_hack_id=" + i + "?subid") + "?proid") + "?name")) + '</a></td><td><span class="uoj-username">' + localStorage.getItem("uoj_hack_id=" + i + "?hacker") + '</span></td><td><span class="uoj-username">' + localStorage.getItem("submission-id=" + localStorage.getItem("uoj_hack_id=" + i + "?subid") + "?user") + '</span></td><td><a href="file:///D:/OJ/oj.daimayuan.top/hack/' + i + '.html" class="uoj-status">' + localStorage.getItem("uoj_hack_id=" + i + "?type") + '</a></td><td><small>' + localStorage.getItem("uoj_hack_id=" + i + "?submit_time") + '</small></td></tr>');
+	document.write('<tr><td><a href="/OJ/oj.daimayuan.top/hack/' + i + '.html">#' + i + '</a></td><td><a href="/OJ/oj.daimayuan.top/submission/' + localStorage.getItem("uoj_hack_id=" + i + "?subid") + '.html">#' + localStorage.getItem("uoj_hack_id=" + i + "?subid") + '</a></td><td><a href="problem/' + localStorage.getItem("submission-id=" + localStorage.getItem("uoj_hack_id=" + i + "?subid") + "?proid") + '.html">#' + localStorage.getItem("submission-id=" + localStorage.getItem("uoj_hack_id=" + i + "?subid") + "?proid") + '. ' + (localStorage.getItem("problem-id=" + localStorage.getItem("submission-id=" + localStorage.getItem("uoj_hack_id=" + i + "?subid") + "?proid") + "?name")) + '</a></td><td><span class="uoj-username">' + localStorage.getItem("uoj_hack_id=" + i + "?hacker") + '</span></td><td><span class="uoj-username">' + localStorage.getItem("submission-id=" + localStorage.getItem("uoj_hack_id=" + i + "?subid") + "?user") + '</span></td><td><a href="/OJ/oj.daimayuan.top/hack/' + i + '.html" class="uoj-status">' + localStorage.getItem("uoj_hack_id=" + i + "?type") + '</a></td><td><small>' + localStorage.getItem("uoj_hack_id=" + i + "?submit_time") + '</small></td></tr>');
 		if (localStorage.getItem("uoj_hack_id=" + i + "?type") == "Waiting") {
 			if (localStorage.getItem("uoj_hack_id=" + i + "?hacker") != uoj_username) 
 				continue;
@@ -369,7 +369,7 @@ else
 			</div>
 </div>
 			</div>
-<script type="text/javascript" src="file:///D:/OJ/oj.daimayuan.top/js/contest.js"></script>
+<script type="text/javascript" src="/OJ/oj.daimayuan.top/js/contest.js"></script>
 						<div class="uoj-footer">
 				<div class="btn-group dropright mb-3">
 					<button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-toggle="dropdown">
@@ -384,7 +384,7 @@ else
 								<p>服务器时间: 2025-02-03 20:10:03 | <a href="https://github.com/UniversalOJ/UOJ-System" target="_blank">开源项目</a></p>
 			</div>
 					</div>
-		<script src="file:///D:/OJ/oj.daimayuan.top/js/doj.js"></script>
+		<script src="/OJ/oj.daimayuan.top/js/doj.js"></script>
 		<!-- /container -->
 	</body>
 </html>
