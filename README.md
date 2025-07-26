@@ -1,2 +1,3 @@
-# DmyOJ
-高仿代码源
+# OJ-System $plus$
+
+假OJ，[this](https://github.com/Hussein-01bit/OJ-System/blob/main/README.md?plain=1) 的升级版
