@@ -607,7 +607,7 @@ function update_judgement_status_details(id) {
 	update_judgement_status_list.push(id);
 };
 
-document.ready(function () {
+$(document).ready(function () {
 	function update() {
 		$.get("/submission-status-details", {
 			get: update_judgement_status_list
@@ -685,7 +685,7 @@ function uoj_highlight() {
 	});
 };
 
-document.ready(function () {
+$(document).ready(function () {
 	$('body').uoj_highlight();
 });
 
