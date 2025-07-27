@@ -13,7 +13,7 @@ this_time = Number(this_time);
 var tt = y1 + "-" + ((m1 < 10) ? '0' + m1 : m1) + "-" + ((dys1 < 10) ? '0' + dys1 : dys1) + " " + ((h1 < 10) ? '0' + h1 : h1) + ":" + ((min1 < 10) ? '0' + min1 : min1) + ":" + ((s1 < 10) ? '0' + s1 : s1);
 if (document.querySelector(".uoj-footer") != null)
 	document.querySelector(".uoj-footer").innerHTML =
-		'<div class="btn-group dropright mb-3"><button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-globe"></span> 简体中文					</button><div class="dropdown-menu"><a class="dropdown-item" href="">简体中文</a></div></div><ul class="list-inline"><li class="list-inline-item">Daimayuan Online Judge</li></ul><p>服务器时间: ' + tt + ' | <a href="httpss://github.com/UniversalUOJ-System" target="_blank">开源项目</a></p></div>';
+		'<div class="btn-group dropright mb-3"><button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-globe"></span> 简体中文					</button><div class="dropdown-menu"><a class="dropdown-item" href="">简体中文</a></div></div><ul class="list-inline"><li class="list-inline-item">Daimayuan Online Judge</li></ul><p>服务器时间: ' + tt + ' | <a href="https://github.com/UniversalUOJ-System" target="_blank">开源项目</a></p></div>';
 window.this_long_time = tt;
 
 /*var las = 0, numl = 0, numr = 0, flag = 0;
