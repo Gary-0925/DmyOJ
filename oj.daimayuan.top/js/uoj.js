@@ -1410,21 +1410,23 @@ function showStandings() {
 
 
 // top-dock
-var top_dock = document.querySelector("#navbarSupportedContent");
-var top_dock_text = "";
-top_dock_text = '<ul class="nav navbar-nav mr-auto">';
-top_dock_text += '<li class="nav-item"><a class="nav-link" href="/OJ-System-plus/oj.daimayuan.top/problems.html"><span class="glyphicon glyphicon-list-alt"></span> 题库</a></li>';
-top_dock_text += '<li class="nav-item"><a class="nav-link" href="/OJ-System-plus/oj.daimayuan.top/submissions.html"><span class="glyphicon glyphicon-tasks"></span> 提交记录</a></li>';
-top_dock_text += '<li class="nav-item"><a class="nav-link" href="/OJ-System-plus/oj.daimayuan.top/contests.html"><span class="glyphicon glyphicon-stats"></span> 比赛</a></li>';
-top_dock_text += '<li class="nav-item"><a class="nav-link" href="/OJ-System-plus/oj.daimayuan.top/courses.html"><span class="glyphicon glyphicon-education"></span> 课程</a></li>';
-top_dock_text += '<li class="nav-item"><a class="nav-link" href="/OJ-System-plus/oj.daimayuan.top/note.html"><span class="glyphicon glyphicon-book"></span> Note<sup style="color:red;"><i>new</i></sup></a></li>';
-top_dock_text += '</ul><form id="form-search-problem" class="form-inline my-2 my-lg-0" method="get">';
-if (Number(localStorage.getItem("uoj-user_" + localStorage.getItem("uoj-username") + "_gler")) > 0)
-	top_dock_text += '<div class="input-group"><input type="text" class="form-control" name="search" id="input-search-user" placeholder=学员搜索 />  <div class="input-group-append"><button class="btn btn-search btn-outline-primary" onclick="input_users();"><span class="glyphicon glyphicon-search"></span></button></div></div>';
-top_dock_text += '<div class="input-group"><input type="text" class="form-control" name="search" id="input-search-problem" placeholder=题目搜索 />  <div class="input-group-append"><button class="btn btn-search btn-outline-primary" onclick="input_problems();"><span class="glyphicon glyphicon-search"></span></button></div></div></form>';
-if (localStorage.getItem("uoj-username") == "封禁帐号")
-	top_dock_text = '<ul class="nav navbar-nav mr-auto"><li class="nav-item"><a class="nav-link" href="/OJ-System-plus/oj.daimayuan.top/unseal.html">申请解封<sup style="color:red;"><i>申请即解封</i></sup></a></li></ul>';
-top_dock.innerHTML = top_dock_text;
+window.onload = function () {
+	var top_dock = document.querySelector("#navbarSupportedContent");
+	var top_dock_text = "";
+	top_dock_text = '<ul class="nav navbar-nav mr-auto">';
+	top_dock_text += '<li class="nav-item"><a class="nav-link" href="/OJ-System-plus/oj.daimayuan.top/problems.html"><span class="glyphicon glyphicon-list-alt"></span> 题库</a></li>';
+	top_dock_text += '<li class="nav-item"><a class="nav-link" href="/OJ-System-plus/oj.daimayuan.top/submissions.html"><span class="glyphicon glyphicon-tasks"></span> 提交记录</a></li>';
+	top_dock_text += '<li class="nav-item"><a class="nav-link" href="/OJ-System-plus/oj.daimayuan.top/contests.html"><span class="glyphicon glyphicon-stats"></span> 比赛</a></li>';
+	top_dock_text += '<li class="nav-item"><a class="nav-link" href="/OJ-System-plus/oj.daimayuan.top/courses.html"><span class="glyphicon glyphicon-education"></span> 课程</a></li>';
+	top_dock_text += '<li class="nav-item"><a class="nav-link" href="/OJ-System-plus/oj.daimayuan.top/note.html"><span class="glyphicon glyphicon-book"></span> Note<sup style="color:red;"><i>new</i></sup></a></li>';
+	top_dock_text += '</ul><form id="form-search-problem" class="form-inline my-2 my-lg-0" method="get">';
+	if (Number(localStorage.getItem("uoj-user_" + localStorage.getItem("uoj-username") + "_gler")) > 0)
+		top_dock_text += '<div class="input-group"><input type="text" class="form-control" name="search" id="input-search-user" placeholder=学员搜索 />  <div class="input-group-append"><button class="btn btn-search btn-outline-primary" onclick="input_users();"><span class="glyphicon glyphicon-search"></span></button></div></div>';
+	top_dock_text += '<div class="input-group"><input type="text" class="form-control" name="search" id="input-search-problem" placeholder=题目搜索 />  <div class="input-group-append"><button class="btn btn-search btn-outline-primary" onclick="input_problems();"><span class="glyphicon glyphicon-search"></span></button></div></div></form>';
+	if (localStorage.getItem("uoj-username") == "封禁帐号")
+		top_dock_text = '<ul class="nav navbar-nav mr-auto"><li class="nav-item"><a class="nav-link" href="/OJ-System-plus/oj.daimayuan.top/unseal.html">申请解封<sup style="color:red;"><i>申请即解封</i></sup></a></li></ul>';
+	top_dock.innerHTML = top_dock_text;
+}
 
 
 function input_users() {
