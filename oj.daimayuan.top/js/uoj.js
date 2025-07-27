@@ -344,7 +344,7 @@ function replaceWithHighlightUsername() {
 	}
 }
 
-$.fn.uoj_honor = function () {
+function uoj_honor() {
 	return this.each(function () {
 		var honor = $(this).text();
 		var tag = localStorage.getItem("uoj-user_" + honor + "_tag");
