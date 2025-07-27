@@ -1425,8 +1425,9 @@ window.onload = function () {
 	top_dock_text += '<div class="input-group"><input type="text" class="form-control" name="search" id="input-search-problem" placeholder=题目搜索 />  <div class="input-group-append"><button class="btn btn-search btn-outline-primary" onclick="input_problems();"><span class="glyphicon glyphicon-search"></span></button></div></div></form>';
 	if (localStorage.getItem("uoj-username") == "封禁帐号")
 		top_dock_text = '<ul class="nav navbar-nav mr-auto"><li class="nav-item"><a class="nav-link" href="/OJ-System-plus/oj.daimayuan.top/unseal.html">申请解封<sup style="color:red;"><i>申请即解封</i></sup></a></li></ul>';
+	alert("1");
 	top_dock.innerHTML = top_dock_text;
-
+	alert("2");
 
 
 	function input_users() {
@@ -1545,6 +1546,7 @@ window.onload = function () {
 		this_id = Number(previousURL.substring(numl, numr));
 
 	// USER_LIST
+	alert("3");
 	var fr = document.querySelector(".float-right");
 	var fr_dm = '<li role="presentation"><a class="dropdown-item" id="my_chat" href="/OJ-System-plus/oj.daimayuan.top/user.html???#' + localStorage.getItem("uoj-username") + '">个人信息</a></li>\n							<li role="presentation"><a class="dropdown-item" href="/OJ-System-plus/oj.daimayuan.top/user/system-msg.html">系统消息&nbsp;&nbsp;</a></li>';
 	// ACTIVITY
