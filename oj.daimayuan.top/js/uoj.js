@@ -435,12 +435,12 @@ function validateMotto(str) {
 }
 
 // tags
-$.fn.uoj_problem_tag = function () {
+function uoj_problem_tag() {
 	return this.each(function () {
 		$(this).attr('href', '/oj.daimayuan.top/problems.html?tag=' + encodeURIComponent($(this).text()));
 	});
 }
-$.fn.uoj_blog_tag = function () {
+function uoj_blog_tag() {
 	return this.each(function () {
 		$(this).attr('href', '/oj.daimayuan.top/blog/archive.html?tag=' + encodeURIComponent($(this).text()));
 	});
@@ -509,7 +509,7 @@ function uoj_click_zan_down(id, type) {
 }
 
 var cnt_zan_see = 1;
-$.fn.click_zan_block = function () {
+function click_zan_block() {
 	return this.each(function () {
 		var id = $(this).data('id');
 		var type = $(this).data('type');
@@ -580,7 +580,7 @@ function getCountdownStr(t) {
 	return res;
 }
 
-$.fn.countdown = function (rest, callback) {
+function countdown(rest, callback) {
 	return this.each(function () {
 		var start = new Date().getTime();
 		var cur_rest = rest != undefined ? rest : parseInt($(this).data('rest'));
@@ -631,7 +631,7 @@ $(document).ready(function () {
 });
 
 // highlight
-$.fn.uoj_highlight = function () {
+function uoj_highlight() {
 	return $(this).each(function () {
 		$(this).find("span.uoj-username").each(replaceWithHighlightUsername);
 		$(this).find(".uoj-honor").uoj_honor();
@@ -713,7 +713,7 @@ function checkContestNotice(id, lastTime) {
 }
 
 // long table
-$.fn.long_table = function (data, cur_page, header_row, get_row_str, config) {
+function long_table(data, cur_page, header_row, get_row_str, config) {
 	return this.each(function () {
 		var table_div = this;
 
@@ -891,7 +891,7 @@ function autosave_locally(interval, name, target) {
 }
 
 // source code form group
-$.fn.source_code_form_group = function (name, text, langs_options_html, pros_options_html) {
+function source_code_form_group(name, text, langs_options_html, pros_options_html) {
 	return this.each(function () {
 		var input_language_id = 'input-' + name + '_language';
 		var input_problem_id = 'input-' + name + '_problem';
@@ -1111,7 +1111,7 @@ $.fn.source_code_form_group = function (name, text, langs_options_html, pros_opt
 }
 
 // text file form group
-$.fn.text_file_form_group = function (name, text) {
+function text_file_form_group(name, text) {
 	return this.each(function () {
 		var input_upload_type_name = name + '_upload_type';
 		var input_editor_id = 'input-' + name + '_editor';
