@@ -607,28 +607,6 @@ function update_judgement_status_details(id) {
 	update_judgement_status_list.push(id);
 };
 
-$(document).ready(function () {
-	function update() {
-		$.get("/submission-status-details", {
-			get: update_judgement_status_list
-		},
-			function (data) {
-				for (var i = 0; i < update_judgement_status_list.length; i++) {
-					$("#status_details_" + update_judgement_status_list[i]).html(data[i].html);
-					if (data[i].judged) {
-						location.reload();
-					}
-				}
-			}, 'json').always(
-				function () {
-					setTimeout(update, 10000);
-				}
-			);
-	}
-	if (update_judgement_status_list.length > 0) {
-		setTimeout(update, 10000);
-	}
-});
 
 // highlight
 function uoj_highlight() {
@@ -685,9 +663,6 @@ function uoj_highlight() {
 	});
 };
 
-$(document).ready(function () {
-	$('body').uoj_highlight();
-});
 
 // contest notice
 function checkContestNotice(id, lastTime) {
