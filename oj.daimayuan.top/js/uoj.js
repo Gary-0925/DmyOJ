@@ -311,6 +311,7 @@ window.onload = function () {
 			text += username.substring(1, username.length);
 		else if (rating < 10000)
 			text += '<span style="color: rgb(0, 0, 0);">' + username.substring(1, username.length) + '</span>';
+		alert("1");
 		if (tag == null || tag == undefined)
 			return '<a class="uoj-username" href="/PreOJ-net/oj.daimayuan.top/user.html?#' + username + '" style="color:' + getColOfRating(username, rating) + ';' + ((rating == 0) ? (' font-weight: 400;') : ("")) + '">' + text + '</a>';
 		return '<a class="uoj-username" href="/PreOJ-net/oj.daimayuan.top/user.html?#' + username + '" style="color:' + getColOfRating(username, rating) + ';' + ((rating == 0) ? (' font-weight: 400;') : ("")) + '">' + text + '</a> <button onclick="location.href=\'/oj.daimayuan.top/official/mark text/1.html\';" class="uoj-usertag" style="background-color: ' + getColOfTagBack(username, rating) + '; border: 1px ' + getColOfTagBord(username, rating) + ' solid;' + ((rating == 0) ? 'color: black; ' : '') + '">' + tag + '</button>';
