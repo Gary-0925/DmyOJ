@@ -661,6 +661,9 @@ function uoj_highlight() {
 	});
 };
 
+$(document).ready(function() {
+	$('body').uoj_highlight();
+});
 
 // contest notice
 function checkContestNotice(id, lastTime) {
