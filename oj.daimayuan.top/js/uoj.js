@@ -318,8 +318,8 @@ function getUserLink(username, rating, tag, addSymbol) {
 	else if (rating < 10000)
 		text += '<span style="color: rgb(0, 0, 0);">' + new_username.substring(1, new_username.length) + '</span>';
 	if (tag == null || tag == undefined) 
-		return '<a class="uoj-username" href="file:///D:/oj.daimayuan.top/user/profile/' + username + '.html" style="color:' + getColOfRating(username, rating) + ';' + ((rating == 0) ? (' font-weight: 400;') : ("")) + '">' + text + '</a>';
-	return '<a class="uoj-username" href="file:///D:/oj.daimayuan.top/user/profile/' + username + '.html" style="color:' + getColOfRating(username, rating) + ';' + ((rating == 0) ? (' font-weight: 400;') : ("")) + '">' + text + '</a> <button onclick="location.href=\'file:///D:/oj.daimayuan.top/official/mark text/1.html\';" class="uoj-usertag" style="background-color: ' + getColOfTagBack(username, rating) + '; border: 1px ' + getColOfTagBord(username, rating) + ' solid;' + ((rating == 0) ? 'color: black; ' : '') + '">' + tag + '</button>';
+		return '<a class="uoj-username" href="/PreOJ-net/oj.daimayuan.top/user/profile/' + username + '.html" style="color:' + getColOfRating(username, rating) + ';' + ((rating == 0) ? (' font-weight: 400;') : ("")) + '">' + text + '</a>';
+	return '<a class="uoj-username" href="/PreOJ-net/oj.daimayuan.top/user/profile/' + username + '.html" style="color:' + getColOfRating(username, rating) + ';' + ((rating == 0) ? (' font-weight: 400;') : ("")) + '">' + text + '</a> <button onclick="location.href=\'/PreOJ-net/oj.daimayuan.top/official/mark text/1.html\';" class="uoj-usertag" style="background-color: ' + getColOfTagBack(username, rating) + '; border: 1px ' + getColOfTagBord(username, rating) + ' solid;' + ((rating == 0) ? 'color: black; ' : '') + '">' + tag + '</button>';
 }
 
 function replaceWithHighlightUsername() {
@@ -444,12 +444,12 @@ function validateMotto(str) {
 // tags
 $.fn.uoj_problem_tag = function() {
 	return this.each(function() {
-		$(this).attr('href', 'file:///D:/oj.daimayuan.top/problems.html?tag=' + encodeURIComponent($(this).text()));
+		$(this).attr('href', '/PreOJ-net/oj.daimayuan.top/problems.html?tag=' + encodeURIComponent($(this).text()));
 	});
 }
 $.fn.uoj_blog_tag = function() {
 	return this.each(function() {
-		$(this).attr('href', 'file:///D:/oj.daimayuan.top/blog/archive.html?tag=' + encodeURIComponent($(this).text()));
+		$(this).attr('href', '/PreOJ-net/oj.daimayuan.top/blog/archive.html?tag=' + encodeURIComponent($(this).text()));
 	});
 }
 
