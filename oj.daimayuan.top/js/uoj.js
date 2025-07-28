@@ -609,7 +609,7 @@ function update_judgement_status_details(id) {
 // highlight
 function uoj_highlight() {
 	return $(this).each(function () {
-		$(this).find("span.uoj-username").each(replaceWithHighlightUsername);
+		// $(this).find("span.uoj-username").each(replaceWithHighlightUsername);
 		$(this).find(".uoj-honor").uoj_honor();
 		$(this).find(".uoj-score").each(function () {
 			var score = parseInt($(this).text());
