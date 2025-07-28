@@ -94,11 +94,11 @@ function submit(name) {
 }
 
 if (this_contest_type != "unend" || localStorage.getItem("uoj-user_" + this_user + "_gler") > 0) 
-	document.querySelector("#button-submit-answer").href="/OJ-System-plus/oj.daimayuan.top/submissions.html";
+	document.querySelector("#button-submit-answer").href="/PreOJ-net/oj.daimayuan.top/submissions.html";
 
 
 // LINK
-var all_link = "/OJ-System-plus/oj.daimayuan.top/contest/" + cont_id;
+var all_link = "/PreOJ-net/oj.daimayuan.top/contest/" + cont_id;
 
 var contest = document.querySelector(".contest");
 if (contest != null) 
@@ -125,7 +125,7 @@ if (localStorage.getItem("lastcontest_id=" + cont_id + "?" + this_user) == null 
 }
 
 if (!(localStorage.getItem("uoj-user_" + this_user + "_gler") > 0) && localStorage.getItem("lastcontest_id=" + cont_id + "?" + this_user) != null && localStorage.getItem("lastcontest_id=" + cont_id + "?" + this_user + "&type") == "unstart")
-	window.location.href = "/OJ-System-plus/oj.daimayuan.top/contests.html";
+	window.location.href = "/PreOJ-net/oj.daimayuan.top/contests.html";
 
 
 var vars = document.getElementsByTagName('var');

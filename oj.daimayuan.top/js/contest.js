@@ -1,7 +1,7 @@
 var this_user = localStorage.getItem("uoj-username");
 
 if (!(localStorage.getItem("uoj-user_" + this_user + "_gler") > 0) && localStorage.getItem("lastcontest_id=" + this_id + "?" + this_user) != null && localStorage.getItem("lastcontest_id=" + this_id + "?" + this_user + "&type") == "unstart" && document.querySelector("#contest-registrants") == null)
-	window.location.href = "/OJ-System-plus/oj.daimayuan.top/contests.html";
+	window.location.href = "/PreOJ-net/oj.daimayuan.top/contests.html";
 
 // ID
 var id = this_id;
@@ -70,7 +70,7 @@ if (saizhi != null) {
 }
 
 // LINK
-var all_link = "/OJ-System-plus/oj.daimayuan.top/contest/" + id;
+var all_link = "/PreOJ-net/oj.daimayuan.top/contest/" + id;
 
 var contest = document.querySelector(".contest");
 if (contest != null) 
@@ -121,7 +121,7 @@ else {
 }
 
 if (localStorage.getItem("lastcontest_id=" + this_id + "?" + this_user) != null && contr != null && contbm == null) {
-	location.replace("/OJ-System-plus/oj.daimayuan.top/contests.html");
+	location.replace("/PreOJ-net/oj.daimayuan.top/contests.html");
 }
 
 // THIS TYPE
@@ -184,7 +184,7 @@ function submit(name) {
 	if ((this_contest_type == "unend" || this_contest_type == "wait") && !(localStorage.getItem("uoj-user_" + this_user + "_gler") > 0)) 
 		localStorage.setItem("submission-id=" + this_submit + "?contest", cont_id);
 	else 
-		document.querySelector("#button-submit-answer").href="/OJ-System-plus/oj.daimayuan.top/submissions.html";
+		document.querySelector("#button-submit-answer").href="/PreOJ-net/oj.daimayuan.top/submissions.html";
 	localStorage.setItem("lastcontest_id=" + cont_id + "?" + pro_id + "&" + this_user + "lock", 1);
 }
 

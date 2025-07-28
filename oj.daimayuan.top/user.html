@@ -15,12 +15,12 @@
 	<script type="text/javascript">uojHome = 'http://oj.daimayuan.top'</script>
 
 	<!-- Bootstrap core CSS -->
-	<link type="text/css" rel="stylesheet" href="/OJ-System-plus/oj.daimayuan.top/css/bootstrap.min.css" />
+	<link type="text/css" rel="stylesheet" href="/PreOJ-net/oj.daimayuan.top/css/bootstrap.min.css" />
 	<!-- Bootstrap Glyphicons CSS-->
 	<link type="text/css" rel="stylesheet"
-		href="/OJ-System-plus/oj.daimayuan.top/css/bootstrap-glyphicons.min.css" />
+		href="/PreOJ-net/oj.daimayuan.top/css/bootstrap-glyphicons.min.css" />
 	<!-- Custom styles for this template -->
-	<link type="text/css" rel="stylesheet" href="/OJ-System-plus/oj.daimayuan.top/css/uoj-theme.css" />
+	<link type="text/css" rel="stylesheet" href="/PreOJ-net/oj.daimayuan.top/css/uoj-theme.css" />
 	<!-- jQuery (necessary for Bootstrap\'s JavaScript plugins) -->
 	<script src="http://oj.daimayuan.top/js/jquery.min.js"></script>
 	<!-- jQuery autosize -->
@@ -42,7 +42,7 @@
 	<!-- Color converter -->
 	<script src="http://oj.daimayuan.top/js/color-converter.min.js"></script>
 	<!-- uoj -->
-	<script src="/OJ-System-plus/oj.daimayuan.top/js/uoj.js"></script>
+	<script src="/PreOJ-net/oj.daimayuan.top/js/uoj.js"></script>
 	<!-- readmore -->
 	<script src="http://oj.daimayuan.top/js/readmore/readmore.min.js"></script>
 	<!-- LAB -->
@@ -93,21 +93,21 @@
 					<ul class="dropdown-menu" role="menu">
 						<li role="presentation"><a class="dropdown-item" id="my_chat">个人信息</a></li>
 						<li role="presentation"><a class="dropdown-item"
-								href="/OJ-System-plus/oj.daimayuan.top/user/system-msg.html">系统消息&nbsp;&nbsp;</a></li>
+								href="/PreOJ-net/oj.daimayuan.top/user/system-msg.html">系统消息&nbsp;&nbsp;</a></li>
 					</ul>
 				</li>
 				<li id="login" class="nav-item" role="presentation"><a class="nav-link"
-						href="/OJ-System-plus/oj.daimayuan.top/login.html">登录</a></li>
+						href="/PreOJ-net/oj.daimayuan.top/login.html">登录</a></li>
 				<li id="register" class="nav-item" role="presentation"><a class="nav-link"
-						href="/OJ-System-plus/oj.daimayuan.top/register.html">注册</a></li>
+						href="/PreOJ-net/oj.daimayuan.top/register.html">注册</a></li>
 				<li id="logout" class="nav-item" role="presentation"><a class="nav-link"
-						href="/OJ-System-plus/oj.daimayuan.top/logout.html">登出</a></li>
+						href="/PreOJ-net/oj.daimayuan.top/logout.html">登出</a></li>
 			</ul>
 			<script type="text/javascript">
 				var uoj_username = localStorage.getItem("uoj-username");
 				if (uoj_username != null) {
 					document.querySelector("#uoj_username_page").innerHTML = uoj_username;
-					document.querySelector("#my_chat").href = "/OJ-System-plus/oj.daimayuan.top/user.html#" + uoj_username;
+					document.querySelector("#my_chat").href = "/PreOJ-net/oj.daimayuan.top/user.html#" + uoj_username;
 					document.querySelector("#login").hidden = true;
 					document.querySelector("#register").hidden = true;
 				}
@@ -116,14 +116,14 @@
 					document.querySelector("#logout").hidden = true;
 				}
 			</script>
-			<h1 class="d-none d-sm-block"><a href="/OJ-System-plus/oj.daimayuan.top.html"><img
+			<h1 class="d-none d-sm-block"><a href="/PreOJ-net/oj.daimayuan.top.html"><img
 						src="http://oj.daimayuan.top/images/logo_small.png" alt="Logo" class="img-rounded"
 						style="width:39px; height:39px;" /></a> Daimayuan Online Judge</h1>
 			<h1 class="d-block d-sm-none">Home</h1>
 		</div>
 
 		<div class="navbar navbar-light navbar-expand-md bg-light mb-4" role="navigation">
-			<a class="navbar-brand" href="/OJ-System-plus/oj.daimayuan.top.html">Home</a>
+			<a class="navbar-brand" href="/PreOJ-net/oj.daimayuan.top.html">Home</a>
 			<button type="button" class="navbar-toggler collapsed" data-toggle="collapse"
 				data-target=".navbar-collapse">
 				<span class="navbar-toggler-icon"></span>
@@ -149,7 +149,7 @@
 						</div>
 					</div>
 				</form>
-				<script src="/OJ-System-plus/oj.daimayuan.top/js/uoj.js"></script>
+				<script src="/PreOJ-net/oj.daimayuan.top/js/uoj.js"></script>
 			</div><!--/.nav-collapse -->
 		</div>
 		<script type="text/javascript">
@@ -200,14 +200,14 @@
 						</div>
 					</div>
 
-					<script src="/OJ-System-plus/oj.daimayuan.top/js/doj.js"></script>
+					<script src="/PreOJ-net/oj.daimayuan.top/js/doj.js"></script>
 					<script>
 						if (window.location.href.indexOf('?') > -1)
 						{
 							if (window.location.href.substr(window.location.href.indexOf('?') + 1).indexOf('?') > -1)
 							{
 								if (uoj_username == this_id)
-									document.write('<a type="button" class="btn btn-info btn-sm" href="/OJ-System-plus/oj.daimayuan.top/modify-profile.html"><span class="glyphicon glyphicon-pencil"></span> 更改个人信息</a>');
+									document.write('<a type="button" class="btn btn-info btn-sm" href="/PreOJ-net/oj.daimayuan.top/modify-profile.html"><span class="glyphicon glyphicon-pencil"></span> 更改个人信息</a>');
 								if (localStorage.getItem("uoj-user_" + uoj_username + "_gler") > 0 && (!(localStorage.getItem("uoj-user_" + this_id + "_gler") > 0) || (localStorage.getItem("uoj-super_gler-user") == uoj_username && uoj_username != this_id)) && localStorage.getItem("uoj-user_" + this_id + "_banned") == null)
 									document.write('<a type="button" class="btn btn-danger btn-sm" href="?#' + this_id + '" onclick="banned();">封禁</a>\n');
 								if (localStorage.getItem("uoj-user_" + uoj_username + "_gler") > 0 && (!(localStorage.getItem("uoj-user_" + this_id + "_gler") > 0) || (localStorage.getItem("uoj-super_gler-user") == uoj_username && uoj_username != this_id)) && localStorage.getItem("uoj-user_" + this_id + "_banned") != null)
@@ -317,7 +317,7 @@
 								<script>
 									for (var i = 1; i <= Number(localStorage.getItem("problem-lastid")); i++) {
 										if (localStorage.getItem("problem-id=" + i + "?name") != null && localStorage.getItem("problem-id=" + i + "?user=" + this_id + "&ac") >= 100) {
-											document.write('<a href="/OJ-System-plus/oj.daimayuan.top/problem.html#' + i + '" style="display:inline-block; width:4em;">' + i + '</a>');
+											document.write('<a href="/PreOJ-net/oj.daimayuan.top/problem.html#' + i + '" style="display:inline-block; width:4em;">' + i + '</a>');
 										}
 									}
 								</script>
@@ -336,7 +336,7 @@
 			<p>服务器时间: 2025-01-23 20:59:08 | <a href="https://github.com/UniversalUOJ-System" target="_blank">开源项目</a>
 			</p>
 		</div>
-		<script src="/OJ-System-plus/oj.daimayuan.top/js/doj.js"></script>
+		<script src="/PreOJ-net/oj.daimayuan.top/js/doj.js"></script>
 		<!-- /container -->
 </body>
 

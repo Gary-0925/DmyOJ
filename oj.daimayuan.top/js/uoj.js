@@ -312,8 +312,8 @@ window.onload = function () {
 		else if (rating < 10000)
 			text += '<span style="color: rgb(0, 0, 0);">' + username.substring(1, username.length) + '</span>';
 		if (tag == null || tag == undefined)
-			return '<a class="uoj-username" href="/OJ-System-plus/oj.daimayuan.top/user.html?#' + username + '" style="color:' + getColOfRating(username, rating) + ';' + ((rating == 0) ? (' font-weight: 400;') : ("")) + '">' + text + '</a>';
-		return '<a class="uoj-username" href="/OJ-System-plus/oj.daimayuan.top/user.html?#' + username + '" style="color:' + getColOfRating(username, rating) + ';' + ((rating == 0) ? (' font-weight: 400;') : ("")) + '">' + text + '</a> <button onclick="location.href=\'/oj.daimayuan.top/official/mark text/1.html\';" class="uoj-usertag" style="background-color: ' + getColOfTagBack(username, rating) + '; border: 1px ' + getColOfTagBord(username, rating) + ' solid;' + ((rating == 0) ? 'color: black; ' : '') + '">' + tag + '</button>';
+			return '<a class="uoj-username" href="/PreOJ-net/oj.daimayuan.top/user.html?#' + username + '" style="color:' + getColOfRating(username, rating) + ';' + ((rating == 0) ? (' font-weight: 400;') : ("")) + '">' + text + '</a>';
+		return '<a class="uoj-username" href="/PreOJ-net/oj.daimayuan.top/user.html?#' + username + '" style="color:' + getColOfRating(username, rating) + ';' + ((rating == 0) ? (' font-weight: 400;') : ("")) + '">' + text + '</a> <button onclick="location.href=\'/oj.daimayuan.top/official/mark text/1.html\';" class="uoj-usertag" style="background-color: ' + getColOfTagBack(username, rating) + '; border: 1px ' + getColOfTagBord(username, rating) + ' solid;' + ((rating == 0) ? 'color: black; ' : '') + '">' + tag + '</button>';
 	}
 
 	function replaceWithHighlightUsername() {
@@ -1414,24 +1414,22 @@ window.onload = function () {
 	var top_dock = document.querySelector("#navbarSupportedContent");
 	var top_dock_text = "";
 	top_dock_text = '<ul class="nav navbar-nav mr-auto">';
-	top_dock_text += '<li class="nav-item"><a class="nav-link" href="/OJ-System-plus/oj.daimayuan.top/problems.html"><span class="glyphicon glyphicon-list-alt"></span> 题库</a></li>';
-	top_dock_text += '<li class="nav-item"><a class="nav-link" href="/OJ-System-plus/oj.daimayuan.top/submissions.html"><span class="glyphicon glyphicon-tasks"></span> 提交记录</a></li>';
-	top_dock_text += '<li class="nav-item"><a class="nav-link" href="/OJ-System-plus/oj.daimayuan.top/contests.html"><span class="glyphicon glyphicon-stats"></span> 比赛</a></li>';
-	top_dock_text += '<li class="nav-item"><a class="nav-link" href="/OJ-System-plus/oj.daimayuan.top/courses.html"><span class="glyphicon glyphicon-education"></span> 课程</a></li>';
-	top_dock_text += '<li class="nav-item"><a class="nav-link" href="/OJ-System-plus/oj.daimayuan.top/note.html"><span class="glyphicon glyphicon-book"></span> Note<sup style="color:red;"><i>new</i></sup></a></li>';
+	top_dock_text += '<li class="nav-item"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/problems.html"><span class="glyphicon glyphicon-list-alt"></span> 题库</a></li>';
+	top_dock_text += '<li class="nav-item"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/submissions.html"><span class="glyphicon glyphicon-tasks"></span> 提交记录</a></li>';
+	top_dock_text += '<li class="nav-item"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/contests.html"><span class="glyphicon glyphicon-stats"></span> 比赛</a></li>';
+	top_dock_text += '<li class="nav-item"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/courses.html"><span class="glyphicon glyphicon-education"></span> 课程</a></li>';
+	top_dock_text += '<li class="nav-item"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/note.html"><span class="glyphicon glyphicon-book"></span> Note<sup style="color:red;"><i>new</i></sup></a></li>';
 	top_dock_text += '</ul><form id="form-search-problem" class="form-inline my-2 my-lg-0" method="get">';
 	if (Number(localStorage.getItem("uoj-user_" + localStorage.getItem("uoj-username") + "_gler")) > 0)
 		top_dock_text += '<div class="input-group"><input type="text" class="form-control" name="search" id="input-search-user" placeholder=学员搜索 />  <div class="input-group-append"><button class="btn btn-search btn-outline-primary" onclick="input_users();"><span class="glyphicon glyphicon-search"></span></button></div></div>';
 	top_dock_text += '<div class="input-group"><input type="text" class="form-control" name="search" id="input-search-problem" placeholder=题目搜索 />  <div class="input-group-append"><button class="btn btn-search btn-outline-primary" onclick="input_problems();"><span class="glyphicon glyphicon-search"></span></button></div></div></form>';
 	if (localStorage.getItem("uoj-username") == "封禁帐号")
-		top_dock_text = '<ul class="nav navbar-nav mr-auto"><li class="nav-item"><a class="nav-link" href="/OJ-System-plus/oj.daimayuan.top/unseal.html">申请解封<sup style="color:red;"><i>申请即解封</i></sup></a></li></ul>';
-	alert("1");
+		top_dock_text = '<ul class="nav navbar-nav mr-auto"><li class="nav-item"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/unseal.html">申请解封<sup style="color:red;"><i>申请即解封</i></sup></a></li></ul>';
 	top_dock.innerHTML = top_dock_text;
-	alert("2");
 
 
 	function input_users() {
-		var url = "/OJ-System-plus/oj.daimayuan.top/courses.html";
+		var url = "/PreOJ-net/oj.daimayuan.top/courses.html";
 		var text = document.getElementById("input-search-user").value;
 
 		if (text != "")
@@ -1441,7 +1439,7 @@ window.onload = function () {
 		window.event.returnValue = false;
 	}
 	function input_problems() {
-		var url = "/OJ-System-plus/oj.daimayuan.top/problem";
+		var url = "/PreOJ-net/oj.daimayuan.top/problem";
 		var text = document.getElementById("input-search-problem").value;
 
 		if (text == "")
@@ -1458,13 +1456,13 @@ window.onload = function () {
 	var linkcss = document.createElement("link");
 	linkcss.rel = "stylesheet";
 	linkcss.type = "text/css";
-	linkcss.href = "/OJ-System-plus/oj.daimayuan.top/css/uoj.css";
+	linkcss.href = "/PreOJ-net/oj.daimayuan.top/css/uoj.css";
 	linkcss.media = "all";
 	document.getElementsByTagName("head")[0].appendChild(linkcss);
 
 	// LINK
 	var navbar_brand = document.querySelector(".navbar-brand");
-	navbar_brand.href = "/OJ-System-plus/oj.daimayuan.top.html";
+	navbar_brand.href = "/PreOJ-net/oj.daimayuan.top.html";
 
 
 	// ALL SUBMISSIONS
@@ -1546,16 +1544,15 @@ window.onload = function () {
 		this_id = Number(previousURL.substring(numl, numr));
 
 	// USER_LIST
-	alert("3");
 	var fr = document.querySelector(".float-right");
-	var fr_dm = '<li role="presentation"><a class="dropdown-item" id="my_chat" href="/OJ-System-plus/oj.daimayuan.top/user.html???#' + localStorage.getItem("uoj-username") + '">个人信息</a></li>\n							<li role="presentation"><a class="dropdown-item" href="/OJ-System-plus/oj.daimayuan.top/user/system-msg.html">系统消息&nbsp;&nbsp;</a></li>';
+	var fr_dm = '<li role="presentation"><a class="dropdown-item" id="my_chat" href="/PreOJ-net/oj.daimayuan.top/user.html???#' + localStorage.getItem("uoj-username") + '">个人信息</a></li>\n							<li role="presentation"><a class="dropdown-item" href="/PreOJ-net/oj.daimayuan.top/user/system-msg.html">系统消息&nbsp;&nbsp;</a></li>';
 	// ACTIVITY
-	if (!localStorage.getItem("uoj-user_" + localStorage.getItem("uoj-username") + "_gler") || localStorage.getItem("uoj-username") == localStorage.getItem("uoj-super_gler-user")) fr_dm += '\n						<li role="presentation"><a class="dropdown-item" href="/OJ-System-plus/oj.daimayuan.top/act/uoj_manage.html">✨志愿者管理员活动</a></li>';
+	if (!localStorage.getItem("uoj-user_" + localStorage.getItem("uoj-username") + "_gler") || localStorage.getItem("uoj-username") == localStorage.getItem("uoj-super_gler-user")) fr_dm += '\n						<li role="presentation"><a class="dropdown-item" href="/PreOJ-net/oj.daimayuan.top/act/uoj_manage.html">✨志愿者管理员活动</a></li>';
 	//------------------------------------------------------------
 	if (Number(localStorage.getItem("uoj-user_" + localStorage.getItem("uoj-username") + "_gler")) > 0)
-		fr_dm += '\n						<li role="presentation"><a class="dropdown-item" href="/OJ-System-plus/oj.daimayuan.top/edit/manage.html">系统管理&nbsp;&nbsp;</a></li>';
+		fr_dm += '\n						<li role="presentation"><a class="dropdown-item" href="/PreOJ-net/oj.daimayuan.top/edit/manage.html">系统管理&nbsp;&nbsp;</a></li>';
 	if (localStorage.getItem("uoj-username") != null && localStorage.getItem("uoj-super_gler-user") == localStorage.getItem("uoj-username"))
-		fr_dm += '\n						<li role="presentation"><a class="dropdown-item" href="/OJ-System-plus/oj.daimayuan.top/edit/domain.html">域管理&nbsp;&nbsp;</a></li>';
+		fr_dm += '\n						<li role="presentation"><a class="dropdown-item" href="/PreOJ-net/oj.daimayuan.top/edit/domain.html">域管理&nbsp;&nbsp;</a></li>';
 
 	fr.querySelector(".dropdown-menu").innerHTML = fr_dm;
 
@@ -1571,7 +1568,7 @@ window.onload = function () {
 	}
 	/*
 	<li role="presentation"><a class="dropdown-item" id="my_chat">个人信息</a></li>
-								<li role="presentation"><a class="dropdown-item" href="/OJ-System-plus/oj.daimayuan.top/user/system-msg.html">系统消息&nbsp;&nbsp;</a></li>
+								<li role="presentation"><a class="dropdown-item" href="/PreOJ-net/oj.daimayuan.top/user/system-msg.html">系统消息&nbsp;&nbsp;</a></li>
 	*/
 
 
