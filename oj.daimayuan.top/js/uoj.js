@@ -9,10 +9,10 @@ uojLocaleData = {
 		"zh-cn": "分数"
 	},
 	"contests::n participants": {
-		"en": function (n) {
+		"en": function(n) {
 			return n + " participant" + (n <= 1 ? '' : 's');
 		},
-		"zh-cn": function (n) {
+		"zh-cn": function(n) {
 			return "共 " + n + " 名参赛者";
 		}
 	},
@@ -101,7 +101,8 @@ function getPenaltyTimeStr(x) {
 	return hh + ':' + mm + ':' + ss;
 }
 
-function htmlspecialchars(str) {
+function htmlspecialchars(str)
+{
 	var s = "";
 	if (str.length == 0) return "";
 	s = str.replace(/&/g, "&amp;");
@@ -112,7 +113,7 @@ function htmlspecialchars(str) {
 }
 
 function getColOfTagBack(user, rating, mode = 1) {
-	if (rating >= 0 && localStorage.getItem("uoj-user_" + user + "_color") != null)
+	if (rating >= 0 && localStorage.getItem("uoj-user_" + user + "_color") != null) 
 		return localStorage.getItem("uoj-user_" + user + "_color");
 	if (rating >= 15000) {
 		// ILM
@@ -162,7 +163,7 @@ function getColOfTagBack(user, rating, mode = 1) {
 	}
 }
 function getColOfTagBord(user, rating, mode = 1) {
-	if (rating >= 0 && localStorage.getItem("uoj-user_" + user + "_color") != null)
+	if (rating >= 0 && localStorage.getItem("uoj-user_" + user + "_color") != null) 
 		return localStorage.getItem("uoj-user_" + user + "_color");
 	if (rating >= 15000) {
 		// ILM
@@ -213,7 +214,7 @@ function getColOfTagBord(user, rating, mode = 1) {
 }
 
 function getColOfRating(user, rating, mode = 1) {
-	if (rating >= 0 && localStorage.getItem("uoj-user_" + user + "_color") != null)
+	if (rating >= 0 && localStorage.getItem("uoj-user_" + user + "_color") != null) 
 		return localStorage.getItem("uoj-user_" + user + "_color");
 	if (rating >= 15000) {
 		// ILM
@@ -279,38 +280,46 @@ function getUserSpan(username, rating, tag, addSymbol) {
 	if (addSymbol == undefined) {
 		addSymbol = true;
 	}
-	var text = username[0];
 	if (username.charAt(0) == '@') {
 		username = username.substr(1);
 	}
+	var new_username = username;
+	if (localStorage.getItem("uoj-user_" + username + "_newname") != null)
+		new_username = localStorage.getItem("uoj-user_" + username + "_newname");
+	var text = new_username[0];
 	if (rating >= 4000 && rating < 5000)
 		text = '<span style="color: rgb(0, 0, 0);">' + text + '</span>';
-	if (rating < 5000 || rating >= 10000)
-		text += username.substring(1, username.length);
+	if (rating < 5000 || rating >= 10000) 
+		text += new_username.substring(1, new_username.length);
 	else if (rating < 10000)
-		text += '<span style="color: rgb(0, 0, 0);">' + username.substring(1, username.length) + '</span>';
-	if (tag == null || tag == undefined)
+		text += '<span style="color: rgb(0, 0, 0);">' + new_username.substring(1, new_username.length) + '</span>';
+	if (tag == null || tag == undefined) 
 		return '<span style="color:' + getColOfRating(username, rating) + ';' + ((rating != 0) ? (' font-weight: 800;') : ("")) + '">' + text + '</span>';
 	return '<span style="color:' + getColOfRating(username, rating) + ';' + ((rating != 0) ? (' font-weight: 800;') : ("")) + '">' + text + '</span> <button class="uoj-usertag" style="background-color: ' + getColOfTagBack(username, rating) + '; border: 1px ' + getColOfTagBord(username, rating) + ' solid; ' + ((rating == 0) ? 'color: black; ' : '') + '">' + tag + '</button>';
 }
-function getUserLink(username, rating, tag = null) {
+function getUserLink(username, rating, tag, addSymbol) {
 	if (!username) {
 		return '';
 	}
-	var text = username[0];
+	if (addSymbol == undefined) {
+		addSymbol = true;
+	}
 	if (username.charAt(0) == '@') {
 		username = username.substr(1);
 	}
+	var new_username = username;
+	if (localStorage.getItem("uoj-user_" + username + "_newname") != null)
+		new_username = localStorage.getItem("uoj-user_" + username + "_newname");
+	var text = new_username[0];
 	if (rating >= 4000 && rating < 5000)
 		text = '<span style="color: rgb(0, 0, 0);">' + text + '</span>';
-	if (rating < 5000 || rating >= 10000)
-		text += username.substring(1, username.length);
+	if (rating < 5000 || rating >= 10000) 
+		text += new_username.substring(1, new_username.length);
 	else if (rating < 10000)
-		text += '<span style="color: rgb(0, 0, 0);">' + username.substring(1, username.length) + '</span>';
-	alert("1");
-	if (tag == null || tag == undefined)
-		return '<a class="uoj-username" href="/PreOJ-net/oj.daimayuan.top/user.html?#' + username + '" style="color:' + getColOfRating(username, rating) + ';' + ((rating == 0) ? (' font-weight: 400;') : ("")) + '">' + text + '</a>';
-	return '<a class="uoj-username" href="/PreOJ-net/oj.daimayuan.top/user.html?#' + username + '" style="color:' + getColOfRating(username, rating) + ';' + ((rating == 0) ? (' font-weight: 400;') : ("")) + '">' + text + '</a> <button onclick="location.href=\'/oj.daimayuan.top/official/mark text/1.html\';" class="uoj-usertag" style="background-color: ' + getColOfTagBack(username, rating) + '; border: 1px ' + getColOfTagBord(username, rating) + ' solid;' + ((rating == 0) ? 'color: black; ' : '') + '">' + tag + '</button>';
+		text += '<span style="color: rgb(0, 0, 0);">' + new_username.substring(1, new_username.length) + '</span>';
+	if (tag == null || tag == undefined) 
+		return '<a class="uoj-username" href="file:///D:/oj.daimayuan.top/user/profile/' + username + '.html" style="color:' + getColOfRating(username, rating) + ';' + ((rating == 0) ? (' font-weight: 400;') : ("")) + '">' + text + '</a>';
+	return '<a class="uoj-username" href="file:///D:/oj.daimayuan.top/user/profile/' + username + '.html" style="color:' + getColOfRating(username, rating) + ';' + ((rating == 0) ? (' font-weight: 400;') : ("")) + '">' + text + '</a> <button onclick="location.href=\'file:///D:/oj.daimayuan.top/official/mark text/1.html\';" class="uoj-usertag" style="background-color: ' + getColOfTagBack(username, rating) + '; border: 1px ' + getColOfTagBord(username, rating) + ' solid;' + ((rating == 0) ? 'color: black; ' : '') + '">' + tag + '</button>';
 }
 
 function replaceWithHighlightUsername() {
@@ -327,13 +336,13 @@ function replaceWithHighlightUsername() {
 	if (isNaN(rating)) {
 		return;
 	}
-	if (localStorage.getItem("uoj-user_" + username + "_gler") > 0 && tag == null)
+	if (localStorage.getItem("uoj-user_" + username + "_gler") > 0 && tag == null) 
 		tag = "管理员";
 	// if (localStorage.getItem("uoj-user_" + username + "_gler") > 0) 
 	// 	rating = -10000000;
-	if (!(localStorage.getItem("uoj-user_" + username + "_gler") > 0) && tag == "管理员")
+	if (!(localStorage.getItem("uoj-user_" + username + "_gler") > 0) && tag == "管理员") 
 		tag = null;
-	if (localStorage.getItem("uoj-user_" + username + "_rating") < 0)
+	if (localStorage.getItem("uoj-user_" + username + "_rating") < 0) 
 		tag = "封禁者";
 	if ($(this).data("link") != 0) {
 		$(this).replaceWith(getUserLink(username, rating, tag));
@@ -342,16 +351,16 @@ function replaceWithHighlightUsername() {
 	}
 }
 
-function uoj_honor() {
-	return this.each(function () {
+$.fn.uoj_honor = function() {
+	return this.each(function() {
 		var honor = $(this).text();
 		var tag = localStorage.getItem("uoj-user_" + honor + "_tag");
 		var rating = localStorage.getItem("uoj-user_" + honor + "_rating");
-		if (localStorage.getItem("uoj-user_" + honor + "_gler") > 0 && tag == null)
+		if (localStorage.getItem("uoj-user_" + honor + "_gler") > 0 && tag == null) 
 			tag = "管理员";
-		if (!(localStorage.getItem("uoj-user_" + honor + "_gler") > 0) && tag == "管理员")
+		if (!(localStorage.getItem("uoj-user_" + honor + "_gler") > 0) && tag == "管理员") 
 			tag = null;
-		if (localStorage.getItem("uoj-user_" + honor + "_rating") < 0)
+		if (localStorage.getItem("uoj-user_" + honor + "_rating") < 0) 
 			tag = "封禁者";
 		// if (localStorage.getItem("uoj-user_" + honor + "_gler") > 0) 
 		// 	rating = -10000000;
@@ -433,14 +442,14 @@ function validateMotto(str) {
 }
 
 // tags
-function uoj_problem_tag() {
-	return this.each(function () {
-		$(this).attr('href', '/oj.daimayuan.top/problems.html?tag=' + encodeURIComponent($(this).text()));
+$.fn.uoj_problem_tag = function() {
+	return this.each(function() {
+		$(this).attr('href', 'file:///D:/oj.daimayuan.top/problems.html?tag=' + encodeURIComponent($(this).text()));
 	});
 }
-function uoj_blog_tag() {
-	return this.each(function () {
-		$(this).attr('href', '/oj.daimayuan.top/blog/archive.html?tag=' + encodeURIComponent($(this).text()));
+$.fn.uoj_blog_tag = function() {
+	return this.each(function() {
+		$(this).attr('href', 'file:///D:/oj.daimayuan.top/blog/archive.html?tag=' + encodeURIComponent($(this).text()));
 	});
 }
 
@@ -449,12 +458,12 @@ function click_zan(zan_id, zan_type, zan_delta, node) {
 	var loading_node = $('<div class="text-muted">loading...</div>');
 	$(node).replaceWith(loading_node);
 	$.post(zan_link + '/click-zan', {
-		id: zan_id,
-		delta: zan_delta,
-		type: zan_type
-	}, function (ret) {
+		id : zan_id,
+		delta : zan_delta,
+		type : zan_type
+	}, function(ret) {
 		$(loading_node).replaceWith($(ret).click_zan_block());
-	}).fail(function () {
+	}).fail(function() {
 		$(loading_node).replaceWith('<div class="text-danger">failed</div>');
 	});
 }
@@ -463,11 +472,11 @@ function uoj_click_zan_up(id, type) {
 	var username = localStorage.getItem("uoj-username");
 	var cnt = localStorage.getItem("type=" + type + "&id=" + id);
 	var val;
-	if (cnt == null)
+	if (cnt == null) 
 		cnt = 0;
 	if (username != null) {
 		val = localStorage.getItem("type=" + type + "&id=" + id + "&user=" + username);
-		if (val == null)
+		if (val == null) 
 			val = 0;
 	}
 	else {
@@ -486,11 +495,11 @@ function uoj_click_zan_down(id, type) {
 	var username = localStorage.getItem("uoj-username");
 	var cnt = localStorage.getItem("type=" + type + "&id=" + id);
 	var val;
-	if (cnt == null)
+	if (cnt == null) 
 		cnt = 0;
 	if (username != null) {
 		val = localStorage.getItem("type=" + type + "&id=" + id + "&user=" + username);
-		if (val == null)
+		if (val == null) 
 			val = 0;
 	}
 	else {
@@ -507,18 +516,18 @@ function uoj_click_zan_down(id, type) {
 }
 
 var cnt_zan_see = 1;
-function click_zan_block() {
-	return this.each(function () {
+$.fn.click_zan_block = function() {
+	return this.each(function() {
 		var id = $(this).data('id');
 		var type = $(this).data('type');
 		var username = localStorage.getItem("uoj-username");
 		var val = 0;
 		var cnt = localStorage.getItem("type=" + type + "&id=" + id);
-		if (cnt == null)
+		if (cnt == null) 
 			cnt = 0;
 		if (username != null) {
 			val = localStorage.getItem("type=" + type + "&id=" + id + "&user=" + username);
-			if (val == null)
+			if (val == null) 
 				val = 0;
 		}
 		if (val >= 1) {
@@ -537,23 +546,23 @@ function click_zan_block() {
 		} else {
 			$(this).addClass('uoj-click-zan-block-negative');
 		}
-
-		var up_node = $('<a href="#" class="uoj-click-zan-up"><span class="glyphicon glyphicon-thumbs-up"></span>' + uojLocale('click-zan::good') + '</a>').click(function (e) {
+		
+		var up_node = $('<a href="#" class="uoj-click-zan-up"><span class="glyphicon glyphicon-thumbs-up"></span>'+uojLocale('click-zan::good')+'</a>').click(function(e) {
 			e.preventDefault();
 			uoj_click_zan_up(id, type);
 		});
-		var down_node = $('<a href="#" class="uoj-click-zan-down"><span class="glyphicon glyphicon-thumbs-down"></span>' + uojLocale('click-zan::bad') + '</a>').click(function (e) {
+		var down_node = $('<a href="#" class="uoj-click-zan-down"><span class="glyphicon glyphicon-thumbs-down"></span>'+uojLocale('click-zan::bad')+'</a>').click(function(e) {
 			e.preventDefault();
 			uoj_click_zan_down(id, type);
 		});
-
+		
 		if (cnt_zan_see <= zan_cnt) {
-			$(this).append(up_node);
-			$(this).append(down_node);
-			if (username != localStorage.getItem("uoj-super_gler-user"))
-				$(this).append($('<span class="uoj-click-zan-cnt">[<strong>' + (cnt > 0 ? '+' + cnt : (cnt == 0 ? '0' : '-?')) + '</strong>]</span>'));
-			else
-				$(this).append($('<span class="uoj-click-zan-cnt">[<strong>' + (cnt > 0 ? '+' + cnt : (cnt == 0 ? '0' : cnt)) + '</strong>]</span>'));
+		$(this).append(up_node);
+		$(this).append(down_node);
+		if (username != localStorage.getItem("uoj-super_gler-user")) 
+			$(this).append($('<span class="uoj-click-zan-cnt">[<strong>' + (cnt > 0 ? '+' + cnt : (cnt == 0 ? '0' : '-?')) + '</strong>]</span>'));
+		else 
+			$(this).append($('<span class="uoj-click-zan-cnt">[<strong>' + (cnt > 0 ? '+' + cnt : (cnt == 0 ? '0' : cnt)) + '</strong>]</span>'));
 		}
 		cnt_zan_see++;
 	});
@@ -567,7 +576,7 @@ function getCountdownStr(t) {
 	var mm = toFilledStr(x % 60, '0', 2);
 	x = Math.floor(x / 60);
 	var hh = x.toString();
-
+	
 	var res = '<span style="font-size:30px">';
 	res += '<span style="color:' + getColOfScore(Math.min(t / 10800 * 100, 100)) + '">' + hh + '</span>';
 	res += ':';
@@ -578,12 +587,12 @@ function getCountdownStr(t) {
 	return res;
 }
 
-function countdown(rest, callback) {
-	return this.each(function () {
+$.fn.countdown = function(rest, callback) {
+	return this.each(function() {
 		var start = new Date().getTime();
 		var cur_rest = rest != undefined ? rest : parseInt($(this).data('rest'));
 		var cur = this;
-		var countdown = function () {
+		var countdown = function() {
 			var passed = Math.floor((new Date().getTime() - start) / 1000);
 			if (passed >= cur_rest) {
 				$(cur).html(getCountdownStr(0));
@@ -605,13 +614,35 @@ function update_judgement_status_details(id) {
 	update_judgement_status_list.push(id);
 };
 
+$(document).ready(function() {
+	function update() {
+		$.get("/submission-status-details", {
+				get: update_judgement_status_list
+			},
+			function(data) {
+				for (var i = 0; i < update_judgement_status_list.length; i++) {
+					$("#status_details_" + update_judgement_status_list[i]).html(data[i].html);
+					if (data[i].judged) {
+						location.reload();
+					}
+				}
+			}, 'json').always(
+			function() {
+					setTimeout(update, 10000);
+				}
+			);
+	}
+	if (update_judgement_status_list.length > 0) {
+		setTimeout(update, 10000);
+	}
+});
 
 // highlight
-function uoj_highlight() {
-	return $(this).each(function () {
-		// $(this).find("span.uoj-username").each(replaceWithHighlightUsername);
+$.fn.uoj_highlight = function() {
+	return $(this).each(function() {
+		$(this).find("span.uoj-username").each(replaceWithHighlightUsername);
 		$(this).find(".uoj-honor").uoj_honor();
-		$(this).find(".uoj-score").each(function () {
+		$(this).find(".uoj-score").each(function() {
 			var score = parseInt($(this).text());
 			var maxscore = parseInt($(this).data('max'));
 			if (isNaN(score) && $(this).text().substring(0, 17) == "Pass the subtask#") {
@@ -626,10 +657,10 @@ function uoj_highlight() {
 				$(this).css("font-weight", 400);
 				return;
 			}
-			if ($(this).text() == "AC")
-				if (isNaN(maxscore))
+			if ($(this).text() == "AC") 
+				if (isNaN(maxscore)) 
 					score = 100;
-				else
+				else 
 					score = maxscore;
 			else if (isNaN(score))
 				score = 0;
@@ -639,7 +670,7 @@ function uoj_highlight() {
 				$(this).css("color", getColOfScore(score / maxscore * 100));
 			}
 		});
-		$(this).find(".uoj-status").each(function () {
+		$(this).find(".uoj-status").each(function() {
 			var success = $(this).text();
 			if (success == "Success!") {
 				$(this).css("color", ColorConverter.toStr(ColorConverter.toRGB(new HSV(120, 100, 80))));
