@@ -61,22 +61,27 @@
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="uoj_username_a">
 						<span id="uoj_username_page" class="uoj-username" data-rating="1500" data-link="0"></span> </a>
-
 					<ul class="dropdown-menu" role="menu">
 					</ul>
 				</li>
-				<li id="login" class="nav-item" role="presentation"><a class="nav-link"
-						href="/PreOJ-net/oj.daimayuan.top/login.html">登录</a></li>
-				<li id="register" class="nav-item" role="presentation"><a class="nav-link"
-						href="/PreOJ-net/oj.daimayuan.top/register.html">注册</a></li>
-				<li id="logout" class="nav-item" role="presentation"><a class="nav-link"
-						href="/PreOJ-net/oj.daimayuan.top/logout.html">登出</a></li>
+				<script type="text/javascript">
+					var uoj_username = localStorage.getItem("uoj-username");
+					if (uoj_username != null) {
+						document.querySelector("#uoj_username_page").innerHTML = uoj_username;
+						document.write('<li id="logout" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/logout">登出</a></li>');
+					}
+					else {
+						document.querySelector("#uoj_username_a").hidden = true;
+						document.write('<li id="login" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/login">登录</a></li>');
+						document.write('<li id="register" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/register">注册</a></li>')
+					}
+				</script>
 			</ul>
 			<script type="text/javascript">
 				var uoj_username = localStorage.getItem("uoj-username");
 				if (uoj_username != null) {
 					document.querySelector("#uoj_username_page").innerHTML = uoj_username;
-					document.querySelector("#my_chat").href = "/PreOJ-net/oj.daimayuan.top/user/profile/" + uoj_username + ".html";
+					document.querySelector("#my_chat").href = "/PreOJ-net/oj.daimayuan.top/user/profile/" + uoj_username + "";
 					document.querySelector("#login").hidden = true;
 					document.querySelector("#register").hidden = true;
 				}
@@ -85,14 +90,14 @@
 					document.querySelector("#logout").hidden = true;
 				}
 			</script>
-			<h1 class="d-none d-sm-block"><a href="/PreOJ-net/oj.daimayuan.top.html"><img
+			<h1 class="d-none d-sm-block"><a href="/PreOJ-net/oj.daimayuan.top"><img
 						src="/PreOJ-net/oj.daimayuan.top/image/logo_small.png" alt="Logo" class="img-rounded"
 						style="width:39px; height:39px;" /></a> Daimayuan Online Judge</h1>
 			<h1 class="d-block d-sm-none">Home</h1>
 		</div>
 
 		<div class="navbar navbar-light navbar-expand-md bg-light mb-4" role="navigation">
-			<a class="navbar-brand" href="/PreOJ-net/oj.daimayuan.top.html">Home</a>
+			<a class="navbar-brand" href="/PreOJ-net/oj.daimayuan.top">Home</a>
 			<button type="button" class="navbar-toggler collapsed" data-toggle="collapse"
 				data-target=".navbar-collapse">
 				<span class="navbar-toggler-icon"></span>
@@ -196,7 +201,7 @@
 									newCell.innerHTML = '<div class="uoj-click-zan-block" data-id="' + i + '" data-type="C"></div>';
 									newCell = newRow.insertCell(0);
 									if (localStorage.getItem("uoj-user_" + uoj_username + "_gler") > 0 || Number(localStorage.getItem("lastcontest_id=" + i + "?see")))
-										newCell.innerHTML = '<a href="contest/' + i + '/registrants.html"><span class="glyphicon glyphicon-user"></span> &times;' + r + '</a>';
+										newCell.innerHTML = '<a href="contest/' + i + '/registrants"><span class="glyphicon glyphicon-user"></span> &times;' + r + '</a>';
 									else
 										newCell.innerHTML = '<span class="glyphicon glyphicon-user"></span> &times;?';
 									newCell = newRow.insertCell(0);
@@ -204,41 +209,41 @@
 									newCell = newRow.insertCell(0);
 									newCell.innerHTML = b;
 									newCell = newRow.insertCell(0);
-									newCell.innerHTML = '<a href="contest/' + i + '.html">' + n + '</a>';
+									newCell.innerHTML = '<a href="contest/' + i + '">' + n + '</a>';
 									if (localStorage.getItem("uoj-user_" + uoj_username + "_gler") > 0)
-										newCell.innerHTML = '<a href="contest/' + i + '.html">' + n + '</a><sup><a href="contest/' + i + '.html" style="color: #805980">Private</a></sup>';
+										newCell.innerHTML = '<a href="contest/' + i + '">' + n + '</a><sup><a href="contest/' + i + '" style="color: #805980">Private</a></sup>';
 									if (uoj_username != null && localStorage.getItem("lastcontest_id=" + i + "?" + uoj_username + "&type") == "unstart") {
 										if (localStorage.getItem("lastcontest_id=" + i + "?" + uoj_username) == null)
-											newCell.innerHTML += '<sup><a style="color:red" href="contest/' + i + '/register.html">报名</a></sup>';
+											newCell.innerHTML += '<sup><a style="color:red" href="contest/' + i + '/register">报名</a></sup>';
 										else
 											newCell.innerHTML += '<sup><span style="color:green">已报名</span></sup>';
 									}
 									else if (uoj_username != null && localStorage.getItem("lastcontest_id=" + i + "?" + uoj_username + "&type") == "unend") {
 										if (localStorage.getItem("lastcontest_id=" + i + "?" + uoj_username) == null)
-											newCell.innerHTML += '<sup><a style="color:red" href="contest/' + i + '/register.html">报名</a></sup>';
+											newCell.innerHTML += '<sup><a style="color:red" href="contest/' + i + '/register">报名</a></sup>';
 										else
-											newCell.innerHTML += '<sup><a style="color:blue" href="contest/' + i + '.html">正在进行</a></sup>';
+											newCell.innerHTML += '<sup><a style="color:blue" href="contest/' + i + '">正在进行</a></sup>';
 									}
 									else if (uoj_username != null && localStorage.getItem("lastcontest_id=" + i + "?" + uoj_username + "&type") == "wait")
-										newCell.innerHTML += '<sup><a style="color:blue" href="contest/' + i + '.html">等待评测</a></sup>';
+										newCell.innerHTML += '<sup><a style="color:blue" href="contest/' + i + '">等待评测</a></sup>';
 									else if (uoj_username != null && localStorage.getItem("lastcontest_id=" + i + "?" + uoj_username + "&type") == "judging")
-										newCell.innerHTML += '<sup><a style="color:blue" href="contest/' + i + '.html">正在测评</a></sup>';
+										newCell.innerHTML += '<sup><a style="color:blue" href="contest/' + i + '">正在测评</a></sup>';
 									else if (uoj_username != null && localStorage.getItem("lastcontest_id=" + i + "?type") == "unstart") {
 										if (localStorage.getItem("lastcontest_id=" + i + "?" + uoj_username) == null)
-											newCell.innerHTML += '<sup><a style="color:red" href="contest/' + i + '/register.html">报名</a></sup>';
+											newCell.innerHTML += '<sup><a style="color:red" href="contest/' + i + '/register">报名</a></sup>';
 										else
 											newCell.innerHTML += '<sup><span style="color:green">已报名</span></sup>';
 									}
 									else if (localStorage.getItem("lastcontest_id=" + i + "?type") == "unend") {
 										if (uoj_username != null && localStorage.getItem("lastcontest_id=" + i + "?" + uoj_username) == null)
-											newCell.innerHTML += '<sup><a style="color:red" href="contest/' + i + '/register.html">报名</a></sup>';
+											newCell.innerHTML += '<sup><a style="color:red" href="contest/' + i + '/register">报名</a></sup>';
 										else
-											newCell.innerHTML += '<sup><a style="color:blue" href="contest/' + i + '.html">正在进行</a></sup>';
+											newCell.innerHTML += '<sup><a style="color:blue" href="contest/' + i + '">正在进行</a></sup>';
 									}
 									else if (localStorage.getItem("lastcontest_id=" + i + "?type") == "wait")
-										newCell.innerHTML += '<sup><a style="color:blue" href="contest/' + i + '.html">等待评测</a></sup>';
+										newCell.innerHTML += '<sup><a style="color:blue" href="contest/' + i + '">等待评测</a></sup>';
 									else if (localStorage.getItem("lastcontest_id=" + i + "?type") == "judging")
-										newCell.innerHTML += '<sup><a style="color:blue" href="contest/' + i + '.html">正在测评</a></sup>';
+										newCell.innerHTML += '<sup><a style="color:blue" href="contest/' + i + '">正在测评</a></sup>';
 
 									zan_cnt++;
 									if (uoj_username != null ? (localStorage.getItem("lastcontest_id=" + i + "?" + uoj_username + "&type") == "unstart") : (localStorage.getItem("lastcontest_id=" + i + "?type") == "unstart"))
@@ -259,11 +264,11 @@
 			</script>
 			<script type="text/javascript">
 				// if (localStorage.getItem("uoj-user_" + uoj_username + "_gler") != null) {
-				// document.write('<div style="width: 100px; display: inline-block;"><a href="contest/manage.html" class="btn btn-info btn-block">管理</a></div>');
-				// 	document.write('<div style="width: 100px; display: inline-block;"><a href="contest/add_contest.html" class="btn btn-primary btn-block">新建比赛</a></div>');
+				// document.write('<div style="width: 100px; display: inline-block;"><a href="contest/manage" class="btn btn-info btn-block">管理</a></div>');
+				// 	document.write('<div style="width: 100px; display: inline-block;"><a href="contest/add_contest" class="btn btn-primary btn-block">新建比赛</a></div>');
 				// }
 				// if (localStorage.getItem("uoj-super_gler-user") == uoj_username) {
-				// 	document.write('<div style="width: 100px; display: inline-block;"><a href="contest/del_contest.html" class="btn btn-danger btn-block">删除比赛</a></div>');
+				// 	document.write('<div style="width: 100px; display: inline-block;"><a href="contest/del_contest" class="btn btn-danger btn-block">删除比赛</a></div>');
 				// }
 			</script>
 
@@ -314,7 +319,7 @@
 									newCell.innerHTML = '<div class="uoj-click-zan-block" data-id="' + i + '" data-type="C"></div>';
 									newCell = newRow.insertCell(0);
 									if (localStorage.getItem("uoj-user_" + uoj_username + "_gler") > 0 || Number(localStorage.getItem("lastcontest_id=" + i + "?see")))
-										newCell.innerHTML = '<a href="contest/' + i + '/registrants.html"><span class="glyphicon glyphicon-user"></span> &times;' + r + '</a>';
+										newCell.innerHTML = '<a href="contest/' + i + '/registrants"><span class="glyphicon glyphicon-user"></span> &times;' + r + '</a>';
 									else
 										newCell.innerHTML = '<span class="glyphicon glyphicon-user"></span> &times;?';
 									newCell = newRow.insertCell(0);
@@ -322,10 +327,10 @@
 									newCell = newRow.insertCell(0);
 									newCell.innerHTML = b;
 									newCell = newRow.insertCell(0);
-									newCell.innerHTML = '<a href="contest/' + i + '.html">' + n + '</a>';
+									newCell.innerHTML = '<a href="contest/' + i + '">' + n + '</a>';
 									if (localStorage.getItem("uoj-user_" + uoj_username + "_gler") > 0)
-										newCell.innerHTML += '<sup><a href="contest/' + i + '.html" style="color: #805980">Private</a></sup>';
-									newCell.innerHTML += '<sup><a href="contest/' + i + '/standings.html" style="color:grey">已结束</a></sup>';
+										newCell.innerHTML += '<sup><a href="contest/' + i + '" style="color: #805980">Private</a></sup>';
+									newCell.innerHTML += '<sup><a href="contest/' + i + '/standings" style="color:grey">已结束</a></sup>';
 									zan_cnt++;
 								}
 							}

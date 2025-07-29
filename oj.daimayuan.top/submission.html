@@ -89,22 +89,27 @@
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="uoj_username_a">
 						<span id="uoj_username_page" class="uoj-username" data-rating="1500" data-link="0"></span> </a>
-
 					<ul class="dropdown-menu" role="menu">
 					</ul>
 				</li>
-				<li id="login" class="nav-item" role="presentation"><a class="nav-link"
-						href="/PreOJ-net/oj.daimayuan.top/login.html">登录</a></li>
-				<li id="register" class="nav-item" role="presentation"><a class="nav-link"
-						href="/PreOJ-net/oj.daimayuan.top/register.html">注册</a></li>
-				<li id="logout" class="nav-item" role="presentation"><a class="nav-link"
-						href="/PreOJ-net/oj.daimayuan.top/logout.html">登出</a></li>
+				<script type="text/javascript">
+					var uoj_username = localStorage.getItem("uoj-username");
+					if (uoj_username != null) {
+						document.querySelector("#uoj_username_page").innerHTML = uoj_username;
+						document.write('<li id="logout" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/logout">登出</a></li>');
+					}
+					else {
+						document.querySelector("#uoj_username_a").hidden = true;
+						document.write('<li id="login" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/login">登录</a></li>');
+						document.write('<li id="register" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/register">注册</a></li>')
+					}
+				</script>
 			</ul>
 			<script type="text/javascript">
 				var uoj_username = localStorage.getItem("uoj-username");
 				if (uoj_username != null) {
 					document.querySelector("#uoj_username_page").innerHTML = uoj_username;
-					document.querySelector("#my_chat").href = "/PreOJ-net/oj.daimayuan.top/user/profile/" + uoj_username + ".html";
+					document.querySelector("#my_chat").href = "/PreOJ-net/oj.daimayuan.top/user/profile/" + uoj_username + "";
 					document.querySelector("#login").hidden = true;
 					document.querySelector("#register").hidden = true;
 				}
@@ -113,14 +118,14 @@
 					document.querySelector("#logout").hidden = true;
 				}
 			</script>
-			<h1 class="d-none d-sm-block"><a href="/PreOJ-net/oj.daimayuan.top.html"><img
+			<h1 class="d-none d-sm-block"><a href="/PreOJ-net/oj.daimayuan.top"><img
 						src="/PreOJ-net/oj.daimayuan.top/image/logo_small.png" alt="Logo" class="img-rounded"
 						style="width:39px; height:39px;" /></a> Daimayuan Online Judge</h1>
 			<h1 class="d-block d-sm-none">Home</h1>
 		</div>
 
 		<div class="navbar navbar-light navbar-expand-md bg-light mb-4" role="navigation">
-			<a class="navbar-brand" href="/PreOJ-net/oj.daimayuan.top.html">Home</a>
+			<a class="navbar-brand" href="/PreOJ-net/oj.daimayuan.top">Home</a>
 			<button type="button" class="navbar-toggler collapsed" data-toggle="collapse"
 				data-target=".navbar-collapse">
 				<span class="navbar-toggler-icon"></span>
@@ -181,7 +186,7 @@
 						<script>
 							window.this_id = window.location.hash.substr(1);
 							var i = this_id;
-							document.write('<tr><td><a href="#' + i + '">#' + i + '</a></td><td><a href="./problem.html#' + localStorage.getItem("submission-id=" + i + "?proid") + '">#' + localStorage.getItem("submission-id=" + i + "?proid") + '. ' + (localStorage.getItem("problem-id=" + localStorage.getItem("submission-id=" + i + "?proid") + "?name")) + '</a></td><td><span class="uoj-username" data-rating="1500">' + localStorage.getItem("submission-id=" + i + "?user") + '</span></td><td><a href="#' + i + '" class="uoj-score">' + localStorage.getItem("submission-id=" + i + "?type") + '</a></td><td>' + (localStorage.getItem("submission-id=" + i + "?time") != null ? localStorage.getItem("submission-id=" + i + "?time") + 'ms' : '/') + '</td><td>' + (localStorage.getItem("submission-id=" + i + "?memory") != null ? localStorage.getItem("submission-id=" + i + "?memory") + 'kb' : '/') + '</td><td><a href="#' + i + '">' + localStorage.getItem("submission-id=" + i + "?lang") + '</a></td><td>' + localStorage.getItem("submission-id=" + i + "?size") + '</td><td><small>' + localStorage.getItem("submission-id=" + i + "?submit_time") + '</small></td><td><small>' + localStorage.getItem("submission-id=" + i + "?judging_time") + '</small></td></tr>');
+							document.write('<tr><td><a href="#' + i + '">#' + i + '</a></td><td><a href="./problem#' + localStorage.getItem("submission-id=" + i + "?proid") + '">#' + localStorage.getItem("submission-id=" + i + "?proid") + '. ' + (localStorage.getItem("problem-id=" + localStorage.getItem("submission-id=" + i + "?proid") + "?name")) + '</a></td><td><span class="uoj-username" data-rating="1500">' + localStorage.getItem("submission-id=" + i + "?user") + '</span></td><td><a href="#' + i + '" class="uoj-score">' + localStorage.getItem("submission-id=" + i + "?type") + '</a></td><td>' + (localStorage.getItem("submission-id=" + i + "?time") != null ? localStorage.getItem("submission-id=" + i + "?time") + 'ms' : '/') + '</td><td>' + (localStorage.getItem("submission-id=" + i + "?memory") != null ? localStorage.getItem("submission-id=" + i + "?memory") + 'kb' : '/') + '</td><td><a href="#' + i + '">' + localStorage.getItem("submission-id=" + i + "?lang") + '</a></td><td>' + localStorage.getItem("submission-id=" + i + "?size") + '</td><td><small>' + localStorage.getItem("submission-id=" + i + "?submit_time") + '</small></td><td><small>' + localStorage.getItem("submission-id=" + i + "?judging_time") + '</small></td></tr>');
 						</script>
 					</tbody>
 				</table>
@@ -303,15 +308,15 @@
 				<script type="text/javascript">
 					function delet() {
 						localStorage.removeItem("submission-id=" + this_id + "?type");
-						location.href = "../submissions.html";
+						location.href = "../submissions";
 					}
 
 
 					if (Number(localStorage.getItem("uoj-user_" + uoj_username + "_gler")) > 0) {
 						if (localStorage.getItem("submission-id=" + this_id + "?type") == "Waiting")
-							document.write('<a href="test.html" class="btn btn-primary">测试</a><br/>');
+							document.write('<a href="test" class="btn btn-primary">测试</a><br/>');
 						else
-							document.write('<a href="test.html" class="btn btn-primary">重新测试</a><br/>');
+							document.write('<a href="test" class="btn btn-primary">重新测试</a><br/>');
 						document.write('<button style="margin-top: .5rem;" class="btn btn-danger" onclick="delet();">删除此提交记录</button>')
 					}
 				</script>

@@ -94,7 +94,7 @@ function submit(name) {
 }
 
 if (this_contest_type != "unend" || localStorage.getItem("uoj-user_" + this_user + "_gler") > 0) 
-	document.querySelector("#button-submit-answer").href="/PreOJ-net/oj.daimayuan.top/submissions.html";
+	document.querySelector("#button-submit-answer").href="/PreOJ-net/oj.daimayuan.top/submissions";
 
 
 // LINK
@@ -102,7 +102,7 @@ var all_link = "/PreOJ-net/oj.daimayuan.top/contest/" + cont_id;
 
 var contest = document.querySelector(".contest");
 if (contest != null) 
-	contest.href = all_link + ".html";
+	contest.href = all_link + "";
 
 
 
@@ -110,7 +110,7 @@ if (contest != null)
 
 
 if (contr == null && localStorage.getItem("lastcontest_id=" + cont_id + "?see") != 0 && localStorage.getItem("lastcontest_id=" + cont_id + "?" + this_user) == null && (localStorage.getItem("lastcontest_id=" + cont_id + "?" + this_user + "&type") == "unstart" || localStorage.getItem("lastcontest_id=" + cont_id + "?" + this_user + "&type") == "unend") && !(localStorage.getItem("uoj-user_" + this_user + "_gler") > 0)) {
-	var urlreg = all_link + "/register.html";
+	var urlreg = all_link + "/register";
 	window.location.href = urlreg;
 }
 
@@ -125,7 +125,7 @@ if (localStorage.getItem("lastcontest_id=" + cont_id + "?" + this_user) == null 
 }
 
 if (!(localStorage.getItem("uoj-user_" + this_user + "_gler") > 0) && localStorage.getItem("lastcontest_id=" + cont_id + "?" + this_user) != null && localStorage.getItem("lastcontest_id=" + cont_id + "?" + this_user + "&type") == "unstart")
-	window.location.href = "/PreOJ-net/oj.daimayuan.top/contests.html";
+	window.location.href = "/PreOJ-net/oj.daimayuan.top/contests";
 
 
 var vars = document.getElementsByTagName('var');

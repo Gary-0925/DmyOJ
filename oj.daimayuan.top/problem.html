@@ -119,22 +119,27 @@
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="uoj_username_a">
 						<span id="uoj_username_page" class="uoj-username" data-rating="1500" data-link="0"></span> </a>
-
 					<ul class="dropdown-menu" role="menu">
 					</ul>
 				</li>
-				<li id="login" class="nav-item" role="presentation"><a class="nav-link"
-						href="/PreOJ-net/oj.daimayuan.top/login.html">登录</a></li>
-				<li id="register" class="nav-item" role="presentation"><a class="nav-link"
-						href="/PreOJ-net/oj.daimayuan.top/register.html">注册</a></li>
-				<li id="logout" class="nav-item" role="presentation"><a class="nav-link"
-						href="/PreOJ-net/oj.daimayuan.top/logout.html">登出</a></li>
+				<script type="text/javascript">
+					var uoj_username = localStorage.getItem("uoj-username");
+					if (uoj_username != null) {
+						document.querySelector("#uoj_username_page").innerHTML = uoj_username;
+						document.write('<li id="logout" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/logout">登出</a></li>');
+					}
+					else {
+						document.querySelector("#uoj_username_a").hidden = true;
+						document.write('<li id="login" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/login">登录</a></li>');
+						document.write('<li id="register" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/register">注册</a></li>')
+					}
+				</script>
 			</ul>
 			<script type="text/javascript">
 				var uoj_username = localStorage.getItem("uoj-username");
 				if (uoj_username != null) {
 					document.querySelector("#uoj_username_page").innerHTML = uoj_username;
-					document.querySelector("#my_chat").href = "/PreOJ-net/oj.daimayuan.top/user/profile/" + uoj_username + ".html";
+					document.querySelector("#my_chat").href = "/PreOJ-net/oj.daimayuan.top/user/profile/" + uoj_username + "";
 					document.querySelector("#login").hidden = true;
 					document.querySelector("#register").hidden = true;
 				}
@@ -143,14 +148,14 @@
 					document.querySelector("#logout").hidden = true;
 				}
 			</script>
-			<h1 class="d-none d-sm-block"><a href="/PreOJ-net/oj.daimayuan.top.html"><img
+			<h1 class="d-none d-sm-block"><a href="/PreOJ-net/oj.daimayuan.top"><img
 						src="/PreOJ-net/oj.daimayuan.top/image/logo_small.png" alt="Logo" class="img-rounded"
 						style="width:39px; height:39px;" /></a> Daimayuan Online Judge</h1>
 			<h1 class="d-block d-sm-none">Home</h1>
 		</div>
 
 		<div class="navbar navbar-light navbar-expand-md bg-light mb-4" role="navigation">
-			<a class="navbar-brand" href="/PreOJ-net/oj.daimayuan.top.html">Home</a>
+			<a class="navbar-brand" href="/PreOJ-net/oj.daimayuan.top">Home</a>
 			<button type="button" class="navbar-toggler collapsed" data-toggle="collapse"
 				data-target=".navbar-collapse">
 				<span class="navbar-toggler-icon"></span>
@@ -205,7 +210,7 @@
 			<h1 class="page-header text-center" id="proname"> </h1>
 			<a role="button" class="btn btn-info float-right" href="download.php?type=problem"><span
 					class="glyphicon glyphicon-file"></span> 附加文件</a>
-			<a role="button" class="btn btn-info float-right" href="statistics.html"><span
+			<a role="button" class="btn btn-info float-right" href="statistics"><span
 					class="glyphicon glyphicon-stats"></span> 统计</a>
 
 			<ul class="nav nav-tabs" role="tablist">
@@ -218,7 +223,7 @@
 				<script type="text/javascript">
 					window.this_id = window.location.hash.substr(1);
 					if (localStorage.getItem("uoj-user_" + uoj_username + "_gler") > 0 || localStorage.getItem("problem-id=" + this_id + "?" + uoj_username + "_gler") != null)
-						document.write('<li class="nav-item"><a class="nav-link" href="problem/manage/statement.html#' + this_id + '">管理</a></li>');
+						document.write('<li class="nav-item"><a class="nav-link" href="problem/manage/statement#' + this_id + '">管理</a></li>');
 				</script>
 			</ul>
 			<div class="tab-content">
@@ -240,7 +245,7 @@
 						</script>
 						<div class="text-center"><a type="submit" id="button-submit-answer" name="submit-answer"
 								value="answer" class="mt-2 btn btn-secondary" onclick="submit('answer_answer');"
-								href="../submissions.html">提交</a></div>
+								href="../submissions">提交</a></div>
 					</form>
 				</div>
 				<div class="tab-pane" id="tab-custom-test">
@@ -589,7 +594,7 @@
 						<h3 for="input-contestname" class="control-label">您真的要删除此题目吗？该操作不可逆！</h3>
 					</div>
 					<div class="text-center"><a onclick="change_delet();"
-							href="/PreOJ-net/oj.daimayuan.top/problems.html" type="submit" value="custom_test"
+							href="/PreOJ-net/oj.daimayuan.top/problems" type="submit" value="custom_test"
 							class="mt-2 btn btn-danger">是的，我确定要删除</a></div>
 					<script>
 						function change_delet() {

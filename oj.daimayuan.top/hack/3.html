@@ -61,34 +61,30 @@
 						<div>
 				<ul class="nav nav-pills float-right" role="tablist">
 									<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="uoj_username_a">
-							<span id="uoj_username_page" class="uoj-username" data-rating="1500" data-link="0"></span> 						</a>
-						
-						<ul class="dropdown-menu" role="menu">
+					<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="uoj_username_a">
+						<span id="uoj_username_page" class="uoj-username" data-rating="1500" data-link="0"></span> </a>
+					<ul class="dropdown-menu" role="menu">
 					</ul>
-					</li>
-					<li id="login" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/login.html">登录</a></li>
-					<li id="register" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/register.html">注册</a></li>
-					<li id="logout" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/logout.html">登出</a></li>
-								</ul><script type="text/javascript">
-							var uoj_username = localStorage.getItem("uoj-username");
-							if (uoj_username != null) {
-								document.querySelector("#uoj_username_page").innerHTML = uoj_username;
-								document.querySelector("#my_chat").href = "/PreOJ-net/oj.daimayuan.top/user/profile/" + uoj_username + ".html";
-								document.querySelector("#login").hidden = true;
-								document.querySelector("#register").hidden = true;
-							}
-							else {
-								document.querySelector("#uoj_username_a").hidden = true;
-								document.querySelector("#logout").hidden = true;
-							}
-						</script>
-				<h1 class="d-none d-sm-block"><a href="/PreOJ-net/oj.daimayuan.top.html"><img src="/PreOJ-net/oj.daimayuan.top/image/logo_small.png" alt="Logo" class="img-rounded" style="width:39px; height:39px;" /></a> Daimayuan Online Judge</h1>
+				</li>
+				<script type="text/javascript">
+					var uoj_username = localStorage.getItem("uoj-username");
+					if (uoj_username != null) {
+						document.querySelector("#uoj_username_page").innerHTML = uoj_username;
+						document.write('<li id="logout" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/logout">登出</a></li>');
+					}
+					else {
+						document.querySelector("#uoj_username_a").hidden = true;
+						document.write('<li id="login" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/login">登录</a></li>');
+						document.write('<li id="register" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/register">注册</a></li>')
+					}
+				</script>
+								</ul>
+				<h1 class="d-none d-sm-block"><a href="/PreOJ-net/oj.daimayuan.top"><img src="/PreOJ-net/oj.daimayuan.top/image/logo_small.png" alt="Logo" class="img-rounded" style="width:39px; height:39px;" /></a> Daimayuan Online Judge</h1>
 				<h1 class="d-block d-sm-none">Home</h1>
 			</div>
 			
 			<div class="navbar navbar-light navbar-expand-md bg-light mb-4" role="navigation">
-	<a class="navbar-brand" href="/PreOJ-net/oj.daimayuan.top.html">Home</a>
+	<a class="navbar-brand" href="/PreOJ-net/oj.daimayuan.top">Home</a>
 	<button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target=".navbar-collapse">
 		<span class="navbar-toggler-icon"></span>
 	</button>
@@ -129,7 +125,7 @@
 			<div class="uoj-content">
 <div class="table-responsive"><table class="table table-bordered table-text-center"><thead><tr><th>ID</th><th>提交记录ID</th><th>题目</th><th>Hacker</th><th>Owner</th><th>结果</th><th>提交时间</th><th>测评时间</th></tr></thead><tbody><script>
 var i = this_id;
-document.write('<tr><td><a href="/PreOJ-net/oj.daimayuan.top/hack/' + i + '.html">#' + i + '</a></td><td><a href="/PreOJ-net/oj.daimayuan.top/submission/' + localStorage.getItem("uoj_hack_id=" + i + "?subid") + '.html">#' + localStorage.getItem("uoj_hack_id=" + i + "?subid") + '</a></td><td><a href="../problem/' + localStorage.getItem("submission-id=" + localStorage.getItem("uoj_hack_id=" + i + "?subid") + "?proid") + '.html">#' + localStorage.getItem("submission-id=" + localStorage.getItem("uoj_hack_id=" + i + "?subid") + "?proid") + '. ' + (localStorage.getItem("problem-id=" + localStorage.getItem("submission-id=" + localStorage.getItem("uoj_hack_id=" + i + "?subid") + "?proid") + "?name")) + '</a></td><td><span class="uoj-username">' + localStorage.getItem("uoj_hack_id=" + i + "?hacker") + '</span></td><td><span class="uoj-username">' + localStorage.getItem("submission-id=" + localStorage.getItem("uoj_hack_id=" + i + "?subid") + "?user") + '</span></td><td><a href="/PreOJ-net/oj.daimayuan.top/hack/' + i + '.html" class="uoj-status">' + localStorage.getItem("uoj_hack_id=" + i + "?type") + '</a></td><td><small>' + localStorage.getItem("uoj_hack_id=" + i + "?submit_time") + '</small></td><td><small>' + localStorage.getItem("uoj_hack_id=" + i + "?judging_time") + '</small></td></tr>');
+document.write('<tr><td><a href="/PreOJ-net/oj.daimayuan.top/hack/' + i + '">#' + i + '</a></td><td><a href="/PreOJ-net/oj.daimayuan.top/submission/' + localStorage.getItem("uoj_hack_id=" + i + "?subid") + '">#' + localStorage.getItem("uoj_hack_id=" + i + "?subid") + '</a></td><td><a href="../problem/' + localStorage.getItem("submission-id=" + localStorage.getItem("uoj_hack_id=" + i + "?subid") + "?proid") + '">#' + localStorage.getItem("submission-id=" + localStorage.getItem("uoj_hack_id=" + i + "?subid") + "?proid") + '. ' + (localStorage.getItem("problem-id=" + localStorage.getItem("submission-id=" + localStorage.getItem("uoj_hack_id=" + i + "?subid") + "?proid") + "?name")) + '</a></td><td><span class="uoj-username">' + localStorage.getItem("uoj_hack_id=" + i + "?hacker") + '</span></td><td><span class="uoj-username">' + localStorage.getItem("submission-id=" + localStorage.getItem("uoj_hack_id=" + i + "?subid") + "?user") + '</span></td><td><a href="/PreOJ-net/oj.daimayuan.top/hack/' + i + '" class="uoj-status">' + localStorage.getItem("uoj_hack_id=" + i + "?type") + '</a></td><td><small>' + localStorage.getItem("uoj_hack_id=" + i + "?submit_time") + '</small></td><td><small>' + localStorage.getItem("uoj_hack_id=" + i + "?judging_time") + '</small></td></tr>');
 </script></tbody></table></div>
 <div class="card border-info mb-3">
 		<div class="card-header bg-info">
@@ -158,7 +154,7 @@ else if (extra == 'RE')
 	</div>
 <div class="table-responsive"><table class="table table-bordered table-text-center"><thead><tr><th>ID</th><th>题目</th><th>提交者</th><th>结果</th><th>用时</th><th>内存</th><th>语言</th><th>文件大小</th><th>提交时间</th><th>测评时间</th></tr></thead><tbody><script type="text/javascript">
 i = localStorage.getItem("uoj_hack_id=" + i + "?subid");
-document.write('<tr><td><a href="../submission/' + i + '.html">#' + i + '</a></td><td><a href="../problem/' + localStorage.getItem("submission-id=" + i + "?proid") + '.html">#' + localStorage.getItem("submission-id=" + i + "?proid") + '. ' + (localStorage.getItem("problem-id=" + localStorage.getItem("submission-id=" + i + "?proid") + "?name")) + '</a></td><td><span class="uoj-username" data-rating="1500">' + localStorage.getItem("submission-id=" + i + "?user") + '</span></td><td><a href="../submission/' + i + '.html" class="uoj-score">' + localStorage.getItem("submission-id=" + i + "?type") + '</a></td><td>' + (localStorage.getItem("submission-id=" + i + "?time") != null ? localStorage.getItem("submission-id=" + i + "?time") + 'ms' : '/') + '</td><td>' + (localStorage.getItem("submission-id=" + i + "?memory") != null ? localStorage.getItem("submission-id=" + i + "?memory") + 'kb' : '/') + '</td><td><a href="../submission/' + i + '.html">' + localStorage.getItem("submission-id=" + i + "?lang") + '</a></td><td>' + localStorage.getItem("submission-id=" + i + "?size") + '</td><td><small>' + localStorage.getItem("submission-id=" + i + "?submit_time") + '</small></td><td><small>' + localStorage.getItem("submission-id=" + i + "?judging_time") + '</small></td></tr>');
+document.write('<tr><td><a href="../submission/' + i + '">#' + i + '</a></td><td><a href="../problem/' + localStorage.getItem("submission-id=" + i + "?proid") + '">#' + localStorage.getItem("submission-id=" + i + "?proid") + '. ' + (localStorage.getItem("problem-id=" + localStorage.getItem("submission-id=" + i + "?proid") + "?name")) + '</a></td><td><span class="uoj-username" data-rating="1500">' + localStorage.getItem("submission-id=" + i + "?user") + '</span></td><td><a href="../submission/' + i + '" class="uoj-score">' + localStorage.getItem("submission-id=" + i + "?type") + '</a></td><td>' + (localStorage.getItem("submission-id=" + i + "?time") != null ? localStorage.getItem("submission-id=" + i + "?time") + 'ms' : '/') + '</td><td>' + (localStorage.getItem("submission-id=" + i + "?memory") != null ? localStorage.getItem("submission-id=" + i + "?memory") + 'kb' : '/') + '</td><td><a href="../submission/' + i + '">' + localStorage.getItem("submission-id=" + i + "?lang") + '</a></td><td>' + localStorage.getItem("submission-id=" + i + "?size") + '</td><td><small>' + localStorage.getItem("submission-id=" + i + "?submit_time") + '</small></td><td><small>' + localStorage.getItem("submission-id=" + i + "?judging_time") + '</small></td></tr>');
 </script></tbody></table></div>
 <div class="card border-info mb-3"><div class="card-header bg-info"><h4 class="card-title">answer</h4></div><div class="card-body"><pre><code id="submission-code"></code></pre></div><div class="card-footer" id="file_lang"></div></div>	
 <script type="text/javascript">
@@ -207,9 +203,9 @@ function delet() {
 
 if (Number(localStorage.getItem("uoj-user_" + uoj_username + "_gler")) > 0) {
 	if (localStorage.getItem("uoj_hack_id=" + this_id + "?type") == "Waiting") 
-		document.write('<a href="test.html" class="btn btn-primary">测试</a><br/>');
+		document.write('<a href="test" class="btn btn-primary">测试</a><br/>');
 	else 
-		document.write('<a href="test.html" class="btn btn-primary">重新测试</a><br/>');
+		document.write('<a href="test" class="btn btn-primary">重新测试</a><br/>');
 	document.write('<button style="margin-top: .5rem;" class="btn btn-danger" onclick="delet();">删除此Hack记录</button>')
 }
 		</script>

@@ -28,7 +28,7 @@ for (var i = 0; i < referrer_len; i++)
 			numr = i;
 	}
 if (flag == 1)*/
-if (window.location.href.includes("/user.html"))
+if (window.location.href.includes("/user"))
 	if (localStorage.getItem("uoj-user_" + this_id + "_password") == null) {
 		document.querySelector("title").innerHTML = "不存在该用户 - 用户信息 - Daimayuan Online Judge";
 		document.querySelector(".uoj-content").innerHTML = '<div class="card border-danger"><div class="card-header bg-danger">用户信息</div><div class="card-body"><h4>不存在该用户</h4></div></div>';

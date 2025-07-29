@@ -83,34 +83,30 @@
 						<div>
 				<ul class="nav nav-pills float-right" role="tablist">
 									<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="uoj_username_a">
-							<span id="uoj_username_page" class="uoj-username" data-rating="1500" data-link="0"></span> 						</a>
-						
-						<ul class="dropdown-menu" role="menu">
+					<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="uoj_username_a">
+						<span id="uoj_username_page" class="uoj-username" data-rating="1500" data-link="0"></span> </a>
+					<ul class="dropdown-menu" role="menu">
 					</ul>
-					</li>
-					<li id="login" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/login.html">登录</a></li>
-					<li id="register" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/register.html">注册</a></li>
-					<li id="logout" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/logout.html">登出</a></li>
-								</ul><script type="text/javascript">
-							var uoj_username = localStorage.getItem("uoj-username");
-							if (uoj_username != null) {
-								document.querySelector("#uoj_username_page").innerHTML = uoj_username;
-								document.querySelector("#my_chat").href = "/PreOJ-net/oj.daimayuan.top/user/profile/" + uoj_username + ".html";
-								document.querySelector("#login").hidden = true;
-								document.querySelector("#register").hidden = true;
-							}
-							else {
-								document.querySelector("#uoj_username_a").hidden = true;
-								document.querySelector("#logout").hidden = true;
-							}
-						</script>
-				<h1 class="d-none d-sm-block"><a href="/PreOJ-net/oj.daimayuan.top.html"><img src="/PreOJ-net/oj.daimayuan.top/image/logo_small.png" alt="Logo" class="img-rounded" style="width:39px; height:39px;" /></a> Daimayuan Online Judge</h1>
+				</li>
+				<script type="text/javascript">
+					var uoj_username = localStorage.getItem("uoj-username");
+					if (uoj_username != null) {
+						document.querySelector("#uoj_username_page").innerHTML = uoj_username;
+						document.write('<li id="logout" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/logout">登出</a></li>');
+					}
+					else {
+						document.querySelector("#uoj_username_a").hidden = true;
+						document.write('<li id="login" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/login">登录</a></li>');
+						document.write('<li id="register" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/register">注册</a></li>')
+					}
+				</script>
+								</ul>
+				<h1 class="d-none d-sm-block"><a href="/PreOJ-net/oj.daimayuan.top"><img src="/PreOJ-net/oj.daimayuan.top/image/logo_small.png" alt="Logo" class="img-rounded" style="width:39px; height:39px;" /></a> Daimayuan Online Judge</h1>
 				<h1 class="d-block d-sm-none">Home</h1>
 			</div>
 			
 			<div class="navbar navbar-light navbar-expand-md bg-light mb-4" role="navigation">
-	<a class="navbar-brand" href="/PreOJ-net/oj.daimayuan.top.html">Home</a>
+	<a class="navbar-brand" href="/PreOJ-net/oj.daimayuan.top">Home</a>
 	<button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target=".navbar-collapse">
 		<span class="navbar-toggler-icon"></span>
 	</button>
@@ -253,7 +249,7 @@
 		if (numtype != "")
 			localStorage.setItem("uoj_hack_id=" + id + "?result", numtype);
 		alert("测评完成");
-		window.location.href = "/PreOJ-net/oj.daimayuan.top/hack/" + id + ".html";
+		window.location.href = "/PreOJ-net/oj.daimayuan.top/hack/" + id + "";
 		window.event.returnValue = false;
 	};
 </script>

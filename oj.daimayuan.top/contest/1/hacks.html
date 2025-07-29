@@ -61,34 +61,30 @@
 						<div>
 				<ul class="nav nav-pills float-right" role="tablist">
 									<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="uoj_username_a">
-							<span id="uoj_username_page" class="uoj-username" data-rating="1500" data-link="0"></span> 						</a>
-						
-						<ul class="dropdown-menu" role="menu">
+					<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="uoj_username_a">
+						<span id="uoj_username_page" class="uoj-username" data-rating="1500" data-link="0"></span> </a>
+					<ul class="dropdown-menu" role="menu">
 					</ul>
-					</li>
-					<li id="login" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/login.html">登录</a></li>
-					<li id="register" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/register.html">注册</a></li>
-					<li id="logout" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/logout.html">登出</a></li>
-								</ul><script type="text/javascript">
-							var uoj_username = localStorage.getItem("uoj-username");
-							if (uoj_username != null) {
-								document.querySelector("#uoj_username_page").innerHTML = uoj_username;
-								document.querySelector("#my_chat").href = "/PreOJ-net/oj.daimayuan.top/user/profile/" + uoj_username + ".html";
-								document.querySelector("#login").hidden = true;
-								document.querySelector("#register").hidden = true;
-							}
-							else {
-								document.querySelector("#uoj_username_a").hidden = true;
-								document.querySelector("#logout").hidden = true;
-							}
-						</script>
-				<h1 class="d-none d-sm-block"><a href="/PreOJ-net/oj.daimayuan.top.html"><img src="/PreOJ-net/oj.daimayuan.top/image/logo_small.png" alt="Logo" class="img-rounded" style="width:39px; height:39px;" /></a> Daimayuan Online Judge</h1>
+				</li>
+				<script type="text/javascript">
+					var uoj_username = localStorage.getItem("uoj-username");
+					if (uoj_username != null) {
+						document.querySelector("#uoj_username_page").innerHTML = uoj_username;
+						document.write('<li id="logout" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/logout">登出</a></li>');
+					}
+					else {
+						document.querySelector("#uoj_username_a").hidden = true;
+						document.write('<li id="login" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/login">登录</a></li>');
+						document.write('<li id="register" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/register">注册</a></li>')
+					}
+				</script>
+								</ul>
+				<h1 class="d-none d-sm-block"><a href="/PreOJ-net/oj.daimayuan.top"><img src="/PreOJ-net/oj.daimayuan.top/image/logo_small.png" alt="Logo" class="img-rounded" style="width:39px; height:39px;" /></a> Daimayuan Online Judge</h1>
 				<h1 class="d-block d-sm-none">Home</h1>
 			</div>
 			
 			<div class="navbar navbar-light navbar-expand-md bg-light mb-4" role="navigation">
-	<a class="navbar-brand" href="/PreOJ-net/oj.daimayuan.top.html">Home</a>
+	<a class="navbar-brand" href="/PreOJ-net/oj.daimayuan.top">Home</a>
 	<button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target=".navbar-collapse">
 		<span class="navbar-toggler-icon"></span>
 	</button>
@@ -140,11 +136,11 @@
 			<ul class="nav nav-tabs" role="tablist"><li class="nav-item"><a href="" role="tab" class="nav-link contest">比赛主页</a></li>
 				<script>
 					if (localStorage.getItem("lastcontest_id=" + this_id + "?rules") == "NOI") 
-						document.write('<li class="nav-item"><a role="tab" class="nav-link" href="submit.html">提交代码</a></li>');
+						document.write('<li class="nav-item"><a role="tab" class="nav-link" href="submit">提交代码</a></li>');
 					if (localStorage.getItem("lastcontest_id=" + this_id + "?hack") != 1) 
 						document.write('<li class="nav-item"><a role="tab" class="nav-link active submissions" href="">提交记录</a></li>');
 					else 
-						document.write('<li class="nav-item"><a role="tab" class="nav-link active dropdown-toggle" data-toggle="dropdown" href="#">用户记录</a><ul class="dropdown-menu"><li><a role="presentation" class="dropdown-item submissions" href="">提交记录</a></li><li><a role="presentation" class="dropdown-item" href="all_submissions.html">所有提交记录</a></li><li><a role="presentation" class="dropdown-item" href="hacks.html">Hack!</a></li>		</ul></li>');
+						document.write('<li class="nav-item"><a role="tab" class="nav-link active dropdown-toggle" data-toggle="dropdown" href="#">用户记录</a><ul class="dropdown-menu"><li><a role="presentation" class="dropdown-item submissions" href="">提交记录</a></li><li><a role="presentation" class="dropdown-item" href="all_submissions">所有提交记录</a></li><li><a role="presentation" class="dropdown-item" href="hacks">Hack!</a></li>		</ul></li>');
 				</script><li class="nav-item"><a href="" role="tab" class="nav-link standings">排行榜</a></li><script>
 				if (localStorage.getItem("uoj-user_" + uoj_username + "_gler") > 0) 
 					document.write('<li class="nav-item"><a href="" role="tab" class="nav-link backstage">大后台</a></li>');
@@ -168,7 +164,7 @@
 </div>
 			</div>
 			<div class="modal-footer">
-                <a type="button" class="btn btn-primary" href="standings.html">去查看</a>
+                <a type="button" class="btn btn-primary" href="standings">去查看</a>
 			</div>
 		</div>
 	</div>
@@ -193,7 +189,7 @@
 </div>
 			</div>
 			<div class="modal-footer">
-                <a type="button" class="btn btn-primary" href="standings.html">去查看</a>
+                <a type="button" class="btn btn-primary" href="standings">去查看</a>
 			</div>
 		</div>
 	</div>
@@ -203,7 +199,7 @@
 for (var i = Number(localStorage.getItem("last_hack_id")); i; i--) {
 	if (localStorage.getItem("uoj_hack_id=" + i + "?type") == null || localStorage.getItem("uoj_hack_id=" + i + "?contest") != this_id) 
 		continue;
-	document.write('<tr><td><a href="/PreOJ-net/oj.daimayuan.top/hack/' + i + '.html">#' + i + '</a></td><td><a href="/PreOJ-net/oj.daimayuan.top/submission/' + localStorage.getItem("uoj_hack_id=" + i + "?subid") + '.html">#' + localStorage.getItem("uoj_hack_id=" + i + "?subid") + '</a></td><td><a href="problem/' + localStorage.getItem("submission-id=" + localStorage.getItem("uoj_hack_id=" + i + "?subid") + "?proid") + '.html">#' + localStorage.getItem("submission-id=" + localStorage.getItem("uoj_hack_id=" + i + "?subid") + "?proid") + '. ' + (localStorage.getItem("problem-id=" + localStorage.getItem("submission-id=" + localStorage.getItem("uoj_hack_id=" + i + "?subid") + "?proid") + "?name")) + '</a></td><td><span class="uoj-username">' + localStorage.getItem("uoj_hack_id=" + i + "?hacker") + '</span></td><td><span class="uoj-username">' + localStorage.getItem("submission-id=" + localStorage.getItem("uoj_hack_id=" + i + "?subid") + "?user") + '</span></td><td><a href="/PreOJ-net/oj.daimayuan.top/hack/' + i + '.html" class="uoj-status">' + localStorage.getItem("uoj_hack_id=" + i + "?type") + '</a></td><td><small>' + localStorage.getItem("uoj_hack_id=" + i + "?submit_time") + '</small></td></tr>');
+	document.write('<tr><td><a href="/PreOJ-net/oj.daimayuan.top/hack/' + i + '">#' + i + '</a></td><td><a href="/PreOJ-net/oj.daimayuan.top/submission/' + localStorage.getItem("uoj_hack_id=" + i + "?subid") + '">#' + localStorage.getItem("uoj_hack_id=" + i + "?subid") + '</a></td><td><a href="problem/' + localStorage.getItem("submission-id=" + localStorage.getItem("uoj_hack_id=" + i + "?subid") + "?proid") + '">#' + localStorage.getItem("submission-id=" + localStorage.getItem("uoj_hack_id=" + i + "?subid") + "?proid") + '. ' + (localStorage.getItem("problem-id=" + localStorage.getItem("submission-id=" + localStorage.getItem("uoj_hack_id=" + i + "?subid") + "?proid") + "?name")) + '</a></td><td><span class="uoj-username">' + localStorage.getItem("uoj_hack_id=" + i + "?hacker") + '</span></td><td><span class="uoj-username">' + localStorage.getItem("submission-id=" + localStorage.getItem("uoj_hack_id=" + i + "?subid") + "?user") + '</span></td><td><a href="/PreOJ-net/oj.daimayuan.top/hack/' + i + '" class="uoj-status">' + localStorage.getItem("uoj_hack_id=" + i + "?type") + '</a></td><td><small>' + localStorage.getItem("uoj_hack_id=" + i + "?submit_time") + '</small></td></tr>');
 		if (localStorage.getItem("uoj_hack_id=" + i + "?type") == "Waiting") {
 			if (localStorage.getItem("uoj_hack_id=" + i + "?hacker") != uoj_username) 
 				continue;

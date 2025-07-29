@@ -86,34 +86,30 @@
 						<div>
 				<ul class="nav nav-pills float-right" role="tablist">
 									<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="uoj_username_a">
-							<span id="uoj_username_page" class="uoj-username" data-rating="1500" data-link="0"></span> 						</a>
-						
-						<ul class="dropdown-menu" role="menu">
+					<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="uoj_username_a">
+						<span id="uoj_username_page" class="uoj-username" data-rating="1500" data-link="0"></span> </a>
+					<ul class="dropdown-menu" role="menu">
 					</ul>
-					</li>
-					<li id="login" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/login.html">登录</a></li>
-					<li id="register" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/register.html">注册</a></li>
-					<li id="logout" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/logout.html">登出</a></li>
-								</ul><script type="text/javascript">
-							var uoj_username = localStorage.getItem("uoj-username");
-							if (uoj_username != null) {
-								document.querySelector("#uoj_username_page").innerHTML = uoj_username;
-								document.querySelector("#my_chat").href = "/PreOJ-net/oj.daimayuan.top/user/profile/" + uoj_username + ".html";
-								document.querySelector("#login").hidden = true;
-								document.querySelector("#register").hidden = true;
-							}
-							else {
-								document.querySelector("#uoj_username_a").hidden = true;
-								document.querySelector("#logout").hidden = true;
-							}
-						</script>
-				<h1 class="d-none d-sm-block"><a href="/PreOJ-net/oj.daimayuan.top.html"><img src="/PreOJ-net/oj.daimayuan.top/image/logo_small.png" alt="Logo" class="img-rounded" style="width:39px; height:39px;" /></a> Daimayuan Online Judge</h1>
+				</li>
+				<script type="text/javascript">
+					var uoj_username = localStorage.getItem("uoj-username");
+					if (uoj_username != null) {
+						document.querySelector("#uoj_username_page").innerHTML = uoj_username;
+						document.write('<li id="logout" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/logout">登出</a></li>');
+					}
+					else {
+						document.querySelector("#uoj_username_a").hidden = true;
+						document.write('<li id="login" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/login">登录</a></li>');
+						document.write('<li id="register" class="nav-item" role="presentation"><a class="nav-link" href="/PreOJ-net/oj.daimayuan.top/register">注册</a></li>')
+					}
+				</script>
+								</ul>
+				<h1 class="d-none d-sm-block"><a href="/PreOJ-net/oj.daimayuan.top"><img src="/PreOJ-net/oj.daimayuan.top/image/logo_small.png" alt="Logo" class="img-rounded" style="width:39px; height:39px;" /></a> Daimayuan Online Judge</h1>
 				<h1 class="d-block d-sm-none">Home</h1>
 			</div>
 			
 			<div class="navbar navbar-light navbar-expand-md bg-light mb-4" role="navigation">
-	<a class="navbar-brand" href="/PreOJ-net/oj.daimayuan.top.html">Home</a>
+	<a class="navbar-brand" href="/PreOJ-net/oj.daimayuan.top">Home</a>
 	<button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target=".navbar-collapse">
 		<span class="navbar-toggler-icon"></span>
 	</button>
@@ -160,7 +156,7 @@
 						<div class="card-body">
 							<h2>管理员上任时</h2>	
 							<ul>
-								<li>只有管理员上任时才拥有的 Tag，例：<button onclick="location.href='../official/mark text/1.html';" class="uoj-usertag" style="background-color: rgb(55,205,155); border: 1px rgb(75,175,178) solid;">我是 XD-</button>；</li>
+								<li>只有管理员上任时才拥有的 Tag，例：<button onclick="location.href='../official/mark text/1';" class="uoj-usertag" style="background-color: rgb(55,205,155); border: 1px rgb(75,175,178) solid;">我是 XD-</button>；</li>
 								<li>管理员上任时可以随时找超级管理员自定义 Tag 内容；</li>
 								<li>管理员在上任时可以随意更改用户名颜色，格式只能以十六进制表示或 rgb 表示法表示；</li>
 								<li>可以新建题目、比赛、删除提交记录、重测提交等权限，若格式不对视情况轻重给予改正或直接删除题目，若存在辱骂、霸凌等行为将直接封号且收回所有权限。</li>
@@ -223,7 +219,7 @@ Rating：
 最高学历：
 之前有没有当过管理员：</textarea>
 							<h4>2. 提交审核</h4>
-							<div class="text-center"><a type="submit" id="button-submit-answer" name="submit-answer" value="answer" class="mt-2 btn btn-secondary" onclick="submit_user_manage();" href="..//oj.daimayuan.top.html">提交</a></div>
+							<div class="text-center"><a type="submit" id="button-submit-answer" name="submit-answer" value="answer" class="mt-2 btn btn-secondary" onclick="submit_user_manage();" href="..//oj.daimayuan.top">提交</a></div>
 <script>
 	function submit_user_manage() {
 		var this_submit = localStorage.getItem("last_user_manage_id");
@@ -272,7 +268,7 @@ Rating：
 						var user = localStorage.getItem("user_manage-id=" + i + "?user");
 						localStorage.setItem("uoj-system-msg_count", Number(localStorage.getItem("uoj-system-msg_count")) + 1);
 						localStorage.setItem("uoj-system-msg_id=" + localStorage.getItem("uoj-system-msg_count") + "?user", user);
-						localStorage.setItem("uoj-system-msg_id=" + localStorage.getItem("uoj-system-msg_count") + "?text", '<tr><td><h4>志愿者通知</h4><p><span class="uoj-username">' + user + '</span> 您好：</p>\n<p class="indent2">恭喜！您在志愿者管理员活动中被管理员设置为管理员，可拥有任何管理项目。您可以在<a href="change_color.html">此处</a>设置自己心仪的用户名颜色。</p></td><td>' + this_long_time + '</td></tr>');
+						localStorage.setItem("uoj-system-msg_id=" + localStorage.getItem("uoj-system-msg_count") + "?text", '<tr><td><h4>志愿者通知</h4><p><span class="uoj-username">' + user + '</span> 您好：</p>\n<p class="indent2">恭喜！您在志愿者管理员活动中被管理员设置为管理员，可拥有任何管理项目。您可以在<a href="change_color">此处</a>设置自己心仪的用户名颜色。</p></td><td>' + this_long_time + '</td></tr>');
 						localStorage.setItem("uoj-user_" + user + "_gler", 1);
 						localStorage.setItem("user_manage-id=" + i + "?type", 2);
 						location.href="";

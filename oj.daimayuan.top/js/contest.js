@@ -1,7 +1,7 @@
 var this_user = localStorage.getItem("uoj-username");
 
 if (!(localStorage.getItem("uoj-user_" + this_user + "_gler") > 0) && localStorage.getItem("lastcontest_id=" + this_id + "?" + this_user) != null && localStorage.getItem("lastcontest_id=" + this_id + "?" + this_user + "&type") == "unstart" && document.querySelector("#contest-registrants") == null)
-	window.location.href = "/PreOJ-net/oj.daimayuan.top/contests.html";
+	window.location.href = "/PreOJ-net/oj.daimayuan.top/contests";
 
 // ID
 var id = this_id;
@@ -74,34 +74,34 @@ var all_link = "/PreOJ-net/oj.daimayuan.top/contest/" + id;
 
 var contest = document.querySelector(".contest");
 if (contest != null) 
-	contest.href = all_link + ".html";
+	contest.href = all_link + "";
 var submissions = document.querySelector(".submissions");
 if (submissions != null) 
-	submissions.href = all_link + "/submissions.html";
+	submissions.href = all_link + "/submissions";
 var standings = document.querySelector(".standings");
 if (standings != null) 
-	standings.href = all_link + "/standings.html";
+	standings.href = all_link + "/standings";
 standings = document.querySelector("#btn-standings1");
 if (standings != null) 
-	standings.href = all_link + "/standings.html";
+	standings.href = all_link + "/standings";
 standings = document.querySelector("#btn-standings2");
 if (standings != null) 
-	standings.href = all_link + "/standings.html";
+	standings.href = all_link + "/standings";
 var backstage = document.querySelector(".backstage");
 if (backstage != null) 
-	backstage.href = all_link + "/backstage.html";
+	backstage.href = all_link + "/backstage";
 var manage = document.querySelector(".manage");
 if (manage != null) 
-	manage.href = all_link + "/manage.html";
+	manage.href = all_link + "/manage";
 var registrants = document.querySelector(".registrants");
 if (registrants != null) 
-	registrants.href = all_link + "/registrants.html";
+	registrants.href = all_link + "/registrants";
 
 
 
 
 if (contr == null && localStorage.getItem("lastcontest_id=" + id + "?see") != 0 && localStorage.getItem("lastcontest_id=" + id + "?" + this_user) == null && (localStorage.getItem("lastcontest_id=" + this_id + "?" + this_user + "&type") == "unstart" || localStorage.getItem("lastcontest_id=" + this_id + "?" + this_user + "&type") == "unend") && !(localStorage.getItem("uoj-user_" + this_user + "_gler") > 0) && contbm == null) {
-	var urlreg = all_link + "/register.html";
+	var urlreg = all_link + "/register";
 	window.location.href = urlreg;
 }
 
@@ -121,7 +121,7 @@ else {
 }
 
 if (localStorage.getItem("lastcontest_id=" + this_id + "?" + this_user) != null && contr != null && contbm == null) {
-	location.replace("/PreOJ-net/oj.daimayuan.top/contests.html");
+	location.replace("/PreOJ-net/oj.daimayuan.top/contests");
 }
 
 // THIS TYPE
@@ -184,7 +184,7 @@ function submit(name) {
 	if ((this_contest_type == "unend" || this_contest_type == "wait") && !(localStorage.getItem("uoj-user_" + this_user + "_gler") > 0)) 
 		localStorage.setItem("submission-id=" + this_submit + "?contest", cont_id);
 	else 
-		document.querySelector("#button-submit-answer").href="/PreOJ-net/oj.daimayuan.top/submissions.html";
+		document.querySelector("#button-submit-answer").href="/PreOJ-net/oj.daimayuan.top/submissions";
 	localStorage.setItem("lastcontest_id=" + cont_id + "?" + pro_id + "&" + this_user + "lock", 1);
 }
 
