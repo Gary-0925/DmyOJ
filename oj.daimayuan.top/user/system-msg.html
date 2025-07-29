@@ -82,7 +82,8 @@
 			<ul class="nav nav-pills float-right" role="tablist">
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="uoj_username_a">
-						<script type="text/javascript">var uoj_username = localStorage.getItem("uoj-username");
+						<script type="text/javascript">
+							var uoj_username = localStorage.getItem("uoj-username");
 				if (uoj_username != null) {
 					document.write('<span id="uoj_username_page" class="uoj-username" data-rating="1500" data-link="0">' + uoj_username + '</span>');
 				}</script></a>
@@ -96,7 +97,6 @@
 				if (uoj_username != null) {
 					document.write('<li id="logout" class="nav-item" role="presentation"><a class="nav-link"
 						href="/PreOJ-net/oj.daimayuan.top/logout.html">登出</a></li>');
-					document.querySelector("#my_chat").href = "/PreOJ-net/oj.daimayuan.top/user/profile/" + uoj_username + ".html";
 				}
 				else {
 					document.write('<li id="login" class="nav-item" role="presentation"><a class="nav-link"						href="/PreOJ-net/oj.daimayuan.top/login.html">登录</a></li<li id="register" class="nav-item" role="presentation"><a class="nav-link"href="/PreOJ-net/oj.daimayuan.top/register.html">注册</a></li>');
