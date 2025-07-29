@@ -94,7 +94,6 @@
 			<script type="text/javascript">
 				var uoj_username = localStorage.getItem("uoj-username");
 				if (uoj_username != null) {
-					document.querySelector("#uoj_username_page").innerHTML = uoj_username;
 					document.write('<li id="logout" class="nav-item" role="presentation"><a class="nav-link"
 						href="/PreOJ-net/oj.daimayuan.top/logout.html">登出</a></li>');
 					document.querySelector("#my_chat").href = "/PreOJ-net/oj.daimayuan.top/user/profile/" + uoj_username + ".html";
