@@ -1353,6 +1353,7 @@ function showCommentReplies(id, replies) {
 		'</tr>',
 		function (reply) {
 			return $('<tr id="' + 'comment-' + reply.id + '" />').append(
+				alert("Getting User Link");
 				$('<td />').append(
 					$('<div class="comtbox6">' + getUserLink(reply.poster, reply.poster_rating) + '锛�' + reply.content + '</div>')
 				).append(
