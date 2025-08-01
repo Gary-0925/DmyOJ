@@ -1352,8 +1352,8 @@ function showCommentReplies(id, replies) {
 		'<th>璇勮鍥炲</th>' +
 		'</tr>',
 		function (reply) {
+			alert("Getting User Link");
 			return $('<tr id="' + 'comment-' + reply.id + '" />').append(
-				alert("Getting User Link");
 				$('<td />').append(
 					$('<div class="comtbox6">' + getUserLink(reply.poster, reply.poster_rating) + '锛�' + reply.content + '</div>')
 				).append(
