@@ -1461,7 +1461,7 @@ function input_problems() {
 	location.href = url;
 	window.event.returnValue = false;
 }
-window.onload = function () {
+// window.onload = function () {
 
 	// top-dock
 	var top_dock = document.querySelector("#navbarSupportedContent");
@@ -1604,4 +1604,5 @@ window.onload = function () {
 	*/
 
 
-}
+// }
+
