@@ -638,6 +638,7 @@ $(document).ready(function() {
 });
 
 // highlight
+alert(1);
 $.fn.uoj_highlight = function() {
 	return $(this).each(function() {
 		$(this).find("span.uoj-username").each(replaceWithHighlightUsername);
@@ -1461,7 +1462,7 @@ function input_problems() {
 	location.href = url;
 	window.event.returnValue = false;
 }
-// window.onload = function () {
+window.onload = function () {
 
 	// top-dock
 	var top_dock = document.querySelector("#navbarSupportedContent");
@@ -1604,5 +1605,6 @@ function input_problems() {
 	*/
 
 
-// }
+}
+
 
