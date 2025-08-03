@@ -638,7 +638,6 @@ $(document).ready(function() {
 });
 
 // highlight
-alert(1);
 $.fn.uoj_highlight = function() {
 	return $(this).each(function() {
 		$(this).find("span.uoj-username").each(replaceWithHighlightUsername);
@@ -694,6 +693,7 @@ $.fn.uoj_highlight = function() {
 };
 
 $(document).ready(function() {
+alert(1);
 	$('body').uoj_highlight();
 });
 
@@ -1606,5 +1606,6 @@ window.onload = function () {
 
 
 }
+
 
 
