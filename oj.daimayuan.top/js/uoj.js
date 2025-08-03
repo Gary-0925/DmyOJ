@@ -639,7 +639,9 @@ $(document).ready(function() {
 
 // highlight
 $.fn.uoj_highlight = function() {
+alert(2);
 	return $(this).each(function() {
+alert(3);
 		$(this).find("span.uoj-username").each(replaceWithHighlightUsername);
 		$(this).find(".uoj-honor").uoj_honor();
 		$(this).find(".uoj-score").each(function() {
@@ -1606,6 +1608,7 @@ window.onload = function () {
 
 
 }
+
 
 
 
