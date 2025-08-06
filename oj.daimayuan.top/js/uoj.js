@@ -695,8 +695,9 @@ alert(3);
 };
 
 $(document).ready(function() {
-alert(1);
-	$('body').uoj_highlight();
+    setTimeout(function() {
+        $('body').uoj_highlight();
+    }, 100);
 });
 
 // contest notice
@@ -1608,6 +1609,7 @@ window.onload = function () {
 
 
 }
+
 
 
 
