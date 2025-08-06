@@ -33,3 +33,11 @@ if (window.location.href.includes("/user"))
 		document.querySelector("title").innerHTML = "不存在该用户 - 用户信息 - Daimayuan Online Judge";
 		document.querySelector(".uoj-content").innerHTML = '<div class="card border-danger"><div class="card-header bg-danger">用户信息</div><div class="card-body"><h4>不存在该用户</h4></div></div>';
 	}
+
+var contitle = "403 - Daimayuan Online Judge";
+var cont = document.querySelector("title");
+if (cont != null) 
+	cont.innerHTML = contitle;
+if (document.querySelector(".uoj-content") != null)
+	document.querySelector(".uoj-content").innerHTML = '<div class="text-center"><div style="font-size:233px">403</div><p>禁止入内！ T_T</p></div><div class="alert alert-danger"><h2>通知</h2><hr/>系统维护中，新系统敬请期待……新系统进度：6%<br/>预计更新：<ul><li>增加 Note 功能（试用阶段已结束）。</li><li>删除 tag 功能。</li><li>域管理界面优化。</li><li>比赛问答系统优化。</li><li>比赛公告系统优化。</li><li>比赛 Rating 计算公式优化。</li><li>系统管理界面优化。</li><li>Markdown 编辑器优化。</li><li>多种权限分别管理。</li><li>数据同步。</li></ul></div>			';
+
